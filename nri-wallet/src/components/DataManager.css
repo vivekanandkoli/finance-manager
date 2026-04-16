@@ -1,0 +1,82 @@
+.data-manager {
+  padding: 20px;
+}
+
+.data-manager h2 {
+  color: #667eea;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.type-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.type-selector button {
+  padding: 8px 16px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.type-selector button.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.records-list {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.records-list h3 {
+  color: #764ba2;
+  margin-bottom: 20px;
+}
+
+.record-item {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.record-item:last-child {
+  border-bottom: none;
+}
+
+.record-item pre {
+  margin: 0;
+  background: #f7f7f7;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 70%;
+  overflow-x: auto;
+}
+
+.record-item button {
+  padding: 6px 12px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .type-selector {
+    flex-wrap: wrap;
+  }
+
+  .record-item pre {
+    max-width: 100%;
+  }
+}

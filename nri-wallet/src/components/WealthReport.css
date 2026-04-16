@@ -1,0 +1,28 @@
+.wealth-report {
+  padding: 20px;
+}
+
+.wealth-report h2 {
+  color: #667eea;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.report-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.report-card h3 {
+  color: #764ba2;
+  margin: 15px 0 10px 0;
+}
+
+.report-card p {
+  font-size: 2em;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 15px;
+}

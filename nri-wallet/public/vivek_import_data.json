@@ -1,0 +1,2634 @@
+{
+  "expenses": [
+    {
+      "category": "Bangkok Salary (in-hand)",
+      "amount": 267000.0,
+      "date": "2026-04-01",
+      "description": "Bangkok Salary (in-hand) for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok Salary (in-hand)",
+      "amount": 267000.0,
+      "date": "2026-05-01",
+      "description": "Bangkok Salary (in-hand) for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok Salary (in-hand)",
+      "amount": 267000.0,
+      "date": "2026-06-01",
+      "description": "Bangkok Salary (in-hand) for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok Salary (in-hand)",
+      "amount": 267000.0,
+      "date": "2026-07-01",
+      "description": "Bangkok Salary (in-hand) for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok Salary (in-hand)",
+      "amount": 267000.0,
+      "date": "2026-08-01",
+      "description": "Bangkok Salary (in-hand) for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok Salary (in-hand)",
+      "amount": 267000.0,
+      "date": "2026-09-01",
+      "description": "Bangkok Salary (in-hand) for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok Salary (in-hand)",
+      "amount": 267000.0,
+      "date": "2026-10-01",
+      "description": "Bangkok Salary (in-hand) for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok Salary (in-hand)",
+      "amount": 267000.0,
+      "date": "2026-11-01",
+      "description": "Bangkok Salary (in-hand) for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok Salary (in-hand)",
+      "amount": 267000.0,
+      "date": "2026-12-01",
+      "description": "Bangkok Salary (in-hand) for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok Salary (in-hand)",
+      "amount": 267000.0,
+      "date": "2027-01-01",
+      "description": "Bangkok Salary (in-hand) for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok Salary (in-hand)",
+      "amount": 267000.0,
+      "date": "2027-02-01",
+      "description": "Bangkok Salary (in-hand) for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok Salary (in-hand)",
+      "amount": 267000.0,
+      "date": "2027-03-01",
+      "description": "Bangkok Salary (in-hand) for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Rental Income",
+      "amount": 38000.0,
+      "date": "2027-01-01",
+      "description": "Rental Income for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Rental Income",
+      "amount": 38000.0,
+      "date": "2027-02-01",
+      "description": "Rental Income for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Rental Income",
+      "amount": 38000.0,
+      "date": "2027-03-01",
+      "description": "Rental Income for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok \u2192 India Transfer (THB)",
+      "amount": 60000.0,
+      "date": "2026-04-01",
+      "description": "Bangkok \u2192 India Transfer (THB) for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok \u2192 India Transfer (THB)",
+      "amount": 60000.0,
+      "date": "2026-05-01",
+      "description": "Bangkok \u2192 India Transfer (THB) for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok \u2192 India Transfer (THB)",
+      "amount": 60000.0,
+      "date": "2026-06-01",
+      "description": "Bangkok \u2192 India Transfer (THB) for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok \u2192 India Transfer (THB)",
+      "amount": 60000.0,
+      "date": "2026-07-01",
+      "description": "Bangkok \u2192 India Transfer (THB) for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok \u2192 India Transfer (THB)",
+      "amount": 60000.0,
+      "date": "2026-08-01",
+      "description": "Bangkok \u2192 India Transfer (THB) for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok \u2192 India Transfer (THB)",
+      "amount": 60000.0,
+      "date": "2026-09-01",
+      "description": "Bangkok \u2192 India Transfer (THB) for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok \u2192 India Transfer (THB)",
+      "amount": 60000.0,
+      "date": "2026-10-01",
+      "description": "Bangkok \u2192 India Transfer (THB) for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok \u2192 India Transfer (THB)",
+      "amount": 60000.0,
+      "date": "2026-11-01",
+      "description": "Bangkok \u2192 India Transfer (THB) for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok \u2192 India Transfer (THB)",
+      "amount": 60000.0,
+      "date": "2026-12-01",
+      "description": "Bangkok \u2192 India Transfer (THB) for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok \u2192 India Transfer (THB)",
+      "amount": 60000.0,
+      "date": "2027-01-01",
+      "description": "Bangkok \u2192 India Transfer (THB) for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok \u2192 India Transfer (THB)",
+      "amount": 60000.0,
+      "date": "2027-02-01",
+      "description": "Bangkok \u2192 India Transfer (THB) for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Bangkok \u2192 India Transfer (THB)",
+      "amount": 60000.0,
+      "date": "2027-03-01",
+      "description": "Bangkok \u2192 India Transfer (THB) for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Exchange Rate (1 THB = ? INR)",
+      "amount": 2.84,
+      "date": "2026-04-01",
+      "description": "Exchange Rate (1 THB = ? INR) for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Exchange Rate (1 THB = ? INR)",
+      "amount": 2.84,
+      "date": "2026-05-01",
+      "description": "Exchange Rate (1 THB = ? INR) for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Exchange Rate (1 THB = ? INR)",
+      "amount": 2.84,
+      "date": "2026-06-01",
+      "description": "Exchange Rate (1 THB = ? INR) for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Exchange Rate (1 THB = ? INR)",
+      "amount": 2.84,
+      "date": "2026-07-01",
+      "description": "Exchange Rate (1 THB = ? INR) for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Exchange Rate (1 THB = ? INR)",
+      "amount": 2.84,
+      "date": "2026-08-01",
+      "description": "Exchange Rate (1 THB = ? INR) for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Exchange Rate (1 THB = ? INR)",
+      "amount": 2.84,
+      "date": "2026-09-01",
+      "description": "Exchange Rate (1 THB = ? INR) for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Exchange Rate (1 THB = ? INR)",
+      "amount": 2.84,
+      "date": "2026-10-01",
+      "description": "Exchange Rate (1 THB = ? INR) for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Exchange Rate (1 THB = ? INR)",
+      "amount": 2.84,
+      "date": "2026-11-01",
+      "description": "Exchange Rate (1 THB = ? INR) for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Exchange Rate (1 THB = ? INR)",
+      "amount": 2.84,
+      "date": "2026-12-01",
+      "description": "Exchange Rate (1 THB = ? INR) for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Exchange Rate (1 THB = ? INR)",
+      "amount": 2.84,
+      "date": "2027-01-01",
+      "description": "Exchange Rate (1 THB = ? INR) for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Exchange Rate (1 THB = ? INR)",
+      "amount": 2.84,
+      "date": "2027-02-01",
+      "description": "Exchange Rate (1 THB = ? INR) for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Exchange Rate (1 THB = ? INR)",
+      "amount": 2.84,
+      "date": "2027-03-01",
+      "description": "Exchange Rate (1 THB = ? INR) for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Transfer Value in \u20b9 (auto-calc)",
+      "amount": 170400.0,
+      "date": "2026-04-01",
+      "description": "Transfer Value in \u20b9 (auto-calc) for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Transfer Value in \u20b9 (auto-calc)",
+      "amount": 170400.0,
+      "date": "2026-05-01",
+      "description": "Transfer Value in \u20b9 (auto-calc) for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Transfer Value in \u20b9 (auto-calc)",
+      "amount": 170400.0,
+      "date": "2026-06-01",
+      "description": "Transfer Value in \u20b9 (auto-calc) for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Transfer Value in \u20b9 (auto-calc)",
+      "amount": 170400.0,
+      "date": "2026-07-01",
+      "description": "Transfer Value in \u20b9 (auto-calc) for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Transfer Value in \u20b9 (auto-calc)",
+      "amount": 170400.0,
+      "date": "2026-08-01",
+      "description": "Transfer Value in \u20b9 (auto-calc) for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Transfer Value in \u20b9 (auto-calc)",
+      "amount": 170400.0,
+      "date": "2026-09-01",
+      "description": "Transfer Value in \u20b9 (auto-calc) for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Transfer Value in \u20b9 (auto-calc)",
+      "amount": 170400.0,
+      "date": "2026-10-01",
+      "description": "Transfer Value in \u20b9 (auto-calc) for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Transfer Value in \u20b9 (auto-calc)",
+      "amount": 170400.0,
+      "date": "2026-11-01",
+      "description": "Transfer Value in \u20b9 (auto-calc) for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Transfer Value in \u20b9 (auto-calc)",
+      "amount": 170400.0,
+      "date": "2026-12-01",
+      "description": "Transfer Value in \u20b9 (auto-calc) for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Transfer Value in \u20b9 (auto-calc)",
+      "amount": 170400.0,
+      "date": "2027-01-01",
+      "description": "Transfer Value in \u20b9 (auto-calc) for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Transfer Value in \u20b9 (auto-calc)",
+      "amount": 170400.0,
+      "date": "2027-02-01",
+      "description": "Transfer Value in \u20b9 (auto-calc) for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Transfer Value in \u20b9 (auto-calc)",
+      "amount": 170400.0,
+      "date": "2027-03-01",
+      "description": "Transfer Value in \u20b9 (auto-calc) for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Home Loan EMI",
+      "amount": 57328.0,
+      "date": "2026-04-01",
+      "description": "Home Loan EMI for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Home Loan EMI",
+      "amount": 57328.0,
+      "date": "2026-05-01",
+      "description": "Home Loan EMI for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Home Loan EMI",
+      "amount": 57328.0,
+      "date": "2026-06-01",
+      "description": "Home Loan EMI for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Home Loan EMI",
+      "amount": 57328.0,
+      "date": "2026-07-01",
+      "description": "Home Loan EMI for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Home Loan EMI",
+      "amount": 57328.0,
+      "date": "2026-08-01",
+      "description": "Home Loan EMI for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Home Loan EMI",
+      "amount": 57328.0,
+      "date": "2026-09-01",
+      "description": "Home Loan EMI for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Home Loan EMI",
+      "amount": 57328.0,
+      "date": "2026-10-01",
+      "description": "Home Loan EMI for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Home Loan EMI",
+      "amount": 57328.0,
+      "date": "2026-11-01",
+      "description": "Home Loan EMI for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Home Loan EMI",
+      "amount": 57328.0,
+      "date": "2026-12-01",
+      "description": "Home Loan EMI for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Home Loan EMI",
+      "amount": 57328.0,
+      "date": "2027-01-01",
+      "description": "Home Loan EMI for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Home Loan EMI",
+      "amount": 57328.0,
+      "date": "2027-02-01",
+      "description": "Home Loan EMI for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Home Loan EMI",
+      "amount": 57328.0,
+      "date": "2027-03-01",
+      "description": "Home Loan EMI for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maintenance (Society)",
+      "amount": 13040.0,
+      "date": "2026-04-01",
+      "description": "Maintenance (Society) for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maintenance (Society)",
+      "amount": 13040.0,
+      "date": "2026-05-01",
+      "description": "Maintenance (Society) for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maintenance (Society)",
+      "amount": 13040.0,
+      "date": "2026-06-01",
+      "description": "Maintenance (Society) for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maintenance (Society)",
+      "amount": 13040.0,
+      "date": "2026-07-01",
+      "description": "Maintenance (Society) for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maintenance (Society)",
+      "amount": 13040.0,
+      "date": "2026-08-01",
+      "description": "Maintenance (Society) for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maintenance (Society)",
+      "amount": 13040.0,
+      "date": "2026-09-01",
+      "description": "Maintenance (Society) for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maintenance (Society)",
+      "amount": 13040.0,
+      "date": "2026-10-01",
+      "description": "Maintenance (Society) for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maintenance (Society)",
+      "amount": 13040.0,
+      "date": "2026-11-01",
+      "description": "Maintenance (Society) for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maintenance (Society)",
+      "amount": 13040.0,
+      "date": "2026-12-01",
+      "description": "Maintenance (Society) for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maintenance (Society)",
+      "amount": 13040.0,
+      "date": "2027-01-01",
+      "description": "Maintenance (Society) for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maintenance (Society)",
+      "amount": 13040.0,
+      "date": "2027-02-01",
+      "description": "Maintenance (Society) for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maintenance (Society)",
+      "amount": 13040.0,
+      "date": "2027-03-01",
+      "description": "Maintenance (Society) for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Vivek (ICICI)",
+      "amount": 1544.0,
+      "date": "2026-04-01",
+      "description": "Term Insurance \u2013 Vivek (ICICI) for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Vivek (ICICI)",
+      "amount": 1544.0,
+      "date": "2026-05-01",
+      "description": "Term Insurance \u2013 Vivek (ICICI) for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Vivek (ICICI)",
+      "amount": 1544.0,
+      "date": "2026-06-01",
+      "description": "Term Insurance \u2013 Vivek (ICICI) for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Vivek (ICICI)",
+      "amount": 1544.0,
+      "date": "2026-07-01",
+      "description": "Term Insurance \u2013 Vivek (ICICI) for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Vivek (ICICI)",
+      "amount": 1544.0,
+      "date": "2026-08-01",
+      "description": "Term Insurance \u2013 Vivek (ICICI) for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Vivek (ICICI)",
+      "amount": 1544.0,
+      "date": "2026-09-01",
+      "description": "Term Insurance \u2013 Vivek (ICICI) for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Vivek (ICICI)",
+      "amount": 1544.0,
+      "date": "2026-10-01",
+      "description": "Term Insurance \u2013 Vivek (ICICI) for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Vivek (ICICI)",
+      "amount": 1544.0,
+      "date": "2026-11-01",
+      "description": "Term Insurance \u2013 Vivek (ICICI) for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Vivek (ICICI)",
+      "amount": 1544.0,
+      "date": "2026-12-01",
+      "description": "Term Insurance \u2013 Vivek (ICICI) for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Vivek (ICICI)",
+      "amount": 1544.0,
+      "date": "2027-01-01",
+      "description": "Term Insurance \u2013 Vivek (ICICI) for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Vivek (ICICI)",
+      "amount": 1544.0,
+      "date": "2027-02-01",
+      "description": "Term Insurance \u2013 Vivek (ICICI) for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Vivek (ICICI)",
+      "amount": 1544.0,
+      "date": "2027-03-01",
+      "description": "Term Insurance \u2013 Vivek (ICICI) for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Wife (ICICI)",
+      "amount": 1163.0,
+      "date": "2026-04-01",
+      "description": "Term Insurance \u2013 Wife (ICICI) for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Wife (ICICI)",
+      "amount": 1163.0,
+      "date": "2026-05-01",
+      "description": "Term Insurance \u2013 Wife (ICICI) for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Wife (ICICI)",
+      "amount": 1163.0,
+      "date": "2026-06-01",
+      "description": "Term Insurance \u2013 Wife (ICICI) for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Wife (ICICI)",
+      "amount": 1163.0,
+      "date": "2026-07-01",
+      "description": "Term Insurance \u2013 Wife (ICICI) for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Wife (ICICI)",
+      "amount": 1163.0,
+      "date": "2026-08-01",
+      "description": "Term Insurance \u2013 Wife (ICICI) for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Wife (ICICI)",
+      "amount": 1163.0,
+      "date": "2026-09-01",
+      "description": "Term Insurance \u2013 Wife (ICICI) for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Wife (ICICI)",
+      "amount": 1163.0,
+      "date": "2026-10-01",
+      "description": "Term Insurance \u2013 Wife (ICICI) for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Wife (ICICI)",
+      "amount": 1163.0,
+      "date": "2026-11-01",
+      "description": "Term Insurance \u2013 Wife (ICICI) for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Wife (ICICI)",
+      "amount": 1163.0,
+      "date": "2026-12-01",
+      "description": "Term Insurance \u2013 Wife (ICICI) for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Wife (ICICI)",
+      "amount": 1163.0,
+      "date": "2027-01-01",
+      "description": "Term Insurance \u2013 Wife (ICICI) for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Wife (ICICI)",
+      "amount": 1163.0,
+      "date": "2027-02-01",
+      "description": "Term Insurance \u2013 Wife (ICICI) for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Term Insurance \u2013 Wife (ICICI)",
+      "amount": 1163.0,
+      "date": "2027-03-01",
+      "description": "Term Insurance \u2013 Wife (ICICI) for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Health Insurance (Family)",
+      "amount": 5121.0,
+      "date": "2026-04-01",
+      "description": "Health Insurance (Family) for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Health Insurance (Family)",
+      "amount": 5121.0,
+      "date": "2026-05-01",
+      "description": "Health Insurance (Family) for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Health Insurance (Family)",
+      "amount": 5121.0,
+      "date": "2026-06-01",
+      "description": "Health Insurance (Family) for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Health Insurance (Family)",
+      "amount": 5121.0,
+      "date": "2026-07-01",
+      "description": "Health Insurance (Family) for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Health Insurance (Family)",
+      "amount": 5121.0,
+      "date": "2026-08-01",
+      "description": "Health Insurance (Family) for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Health Insurance (Family)",
+      "amount": 5121.0,
+      "date": "2026-09-01",
+      "description": "Health Insurance (Family) for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Health Insurance (Family)",
+      "amount": 5121.0,
+      "date": "2026-10-01",
+      "description": "Health Insurance (Family) for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Health Insurance (Family)",
+      "amount": 5121.0,
+      "date": "2026-11-01",
+      "description": "Health Insurance (Family) for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Health Insurance (Family)",
+      "amount": 5121.0,
+      "date": "2026-12-01",
+      "description": "Health Insurance (Family) for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Health Insurance (Family)",
+      "amount": 5121.0,
+      "date": "2027-01-01",
+      "description": "Health Insurance (Family) for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Health Insurance (Family)",
+      "amount": 5121.0,
+      "date": "2027-02-01",
+      "description": "Health Insurance (Family) for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Health Insurance (Family)",
+      "amount": 5121.0,
+      "date": "2027-03-01",
+      "description": "Health Insurance (Family) for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Additional",
+      "amount": 7000.0,
+      "date": "2026-04-01",
+      "description": "Additional for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Light Bill / Gas / Utilities",
+      "amount": 2500.0,
+      "date": "2026-04-01",
+      "description": "Light Bill / Gas / Utilities for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Light Bill / Gas / Utilities",
+      "amount": 2500.0,
+      "date": "2026-05-01",
+      "description": "Light Bill / Gas / Utilities for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Light Bill / Gas / Utilities",
+      "amount": 2500.0,
+      "date": "2026-06-01",
+      "description": "Light Bill / Gas / Utilities for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Light Bill / Gas / Utilities",
+      "amount": 2500.0,
+      "date": "2026-07-01",
+      "description": "Light Bill / Gas / Utilities for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Light Bill / Gas / Utilities",
+      "amount": 2500.0,
+      "date": "2026-08-01",
+      "description": "Light Bill / Gas / Utilities for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Light Bill / Gas / Utilities",
+      "amount": 2500.0,
+      "date": "2026-09-01",
+      "description": "Light Bill / Gas / Utilities for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Light Bill / Gas / Utilities",
+      "amount": 2500.0,
+      "date": "2026-10-01",
+      "description": "Light Bill / Gas / Utilities for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Light Bill / Gas / Utilities",
+      "amount": 2500.0,
+      "date": "2026-11-01",
+      "description": "Light Bill / Gas / Utilities for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Light Bill / Gas / Utilities",
+      "amount": 2500.0,
+      "date": "2026-12-01",
+      "description": "Light Bill / Gas / Utilities for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Light Bill / Gas / Utilities",
+      "amount": 2500.0,
+      "date": "2027-01-01",
+      "description": "Light Bill / Gas / Utilities for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Light Bill / Gas / Utilities",
+      "amount": 2500.0,
+      "date": "2027-02-01",
+      "description": "Light Bill / Gas / Utilities for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Light Bill / Gas / Utilities",
+      "amount": 2500.0,
+      "date": "2027-03-01",
+      "description": "Light Bill / Gas / Utilities for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Tatya (Grandpa Support)",
+      "amount": 2000.0,
+      "date": "2026-04-01",
+      "description": "Tatya (Grandpa Support) for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Tatya (Grandpa Support)",
+      "amount": 5000.0,
+      "date": "2026-05-01",
+      "description": "Tatya (Grandpa Support) for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Tatya (Grandpa Support)",
+      "amount": 5000.0,
+      "date": "2026-06-01",
+      "description": "Tatya (Grandpa Support) for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Tatya (Grandpa Support)",
+      "amount": 5000.0,
+      "date": "2026-07-01",
+      "description": "Tatya (Grandpa Support) for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Tatya (Grandpa Support)",
+      "amount": 5000.0,
+      "date": "2026-08-01",
+      "description": "Tatya (Grandpa Support) for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Tatya (Grandpa Support)",
+      "amount": 5000.0,
+      "date": "2026-09-01",
+      "description": "Tatya (Grandpa Support) for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Tatya (Grandpa Support)",
+      "amount": 5000.0,
+      "date": "2026-10-01",
+      "description": "Tatya (Grandpa Support) for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Tatya (Grandpa Support)",
+      "amount": 5000.0,
+      "date": "2026-11-01",
+      "description": "Tatya (Grandpa Support) for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Tatya (Grandpa Support)",
+      "amount": 5000.0,
+      "date": "2026-12-01",
+      "description": "Tatya (Grandpa Support) for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Tatya (Grandpa Support)",
+      "amount": 5000.0,
+      "date": "2027-01-01",
+      "description": "Tatya (Grandpa Support) for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Tatya (Grandpa Support)",
+      "amount": 5000.0,
+      "date": "2027-02-01",
+      "description": "Tatya (Grandpa Support) for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Tatya (Grandpa Support)",
+      "amount": 5000.0,
+      "date": "2027-03-01",
+      "description": "Tatya (Grandpa Support) for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iCloud Subscription",
+      "amount": 749.0,
+      "date": "2026-04-01",
+      "description": "iCloud Subscription for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iCloud Subscription",
+      "amount": 749.0,
+      "date": "2026-05-01",
+      "description": "iCloud Subscription for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iCloud Subscription",
+      "amount": 749.0,
+      "date": "2026-06-01",
+      "description": "iCloud Subscription for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iCloud Subscription",
+      "amount": 749.0,
+      "date": "2026-07-01",
+      "description": "iCloud Subscription for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iCloud Subscription",
+      "amount": 749.0,
+      "date": "2026-08-01",
+      "description": "iCloud Subscription for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iCloud Subscription",
+      "amount": 749.0,
+      "date": "2026-09-01",
+      "description": "iCloud Subscription for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iCloud Subscription",
+      "amount": 749.0,
+      "date": "2026-10-01",
+      "description": "iCloud Subscription for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iCloud Subscription",
+      "amount": 749.0,
+      "date": "2026-11-01",
+      "description": "iCloud Subscription for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iCloud Subscription",
+      "amount": 749.0,
+      "date": "2026-12-01",
+      "description": "iCloud Subscription for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iCloud Subscription",
+      "amount": 749.0,
+      "date": "2027-01-01",
+      "description": "iCloud Subscription for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iCloud Subscription",
+      "amount": 749.0,
+      "date": "2027-02-01",
+      "description": "iCloud Subscription for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iCloud Subscription",
+      "amount": 749.0,
+      "date": "2027-03-01",
+      "description": "iCloud Subscription for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Parents' Health Insurance",
+      "amount": 6836.0,
+      "date": "2026-04-01",
+      "description": "Parents' Health Insurance for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Parents' Health Insurance",
+      "amount": 6836.0,
+      "date": "2026-05-01",
+      "description": "Parents' Health Insurance for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Parents' Health Insurance",
+      "amount": 6836.0,
+      "date": "2026-06-01",
+      "description": "Parents' Health Insurance for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Parents' Health Insurance",
+      "amount": 6836.0,
+      "date": "2026-07-01",
+      "description": "Parents' Health Insurance for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Parents' Health Insurance",
+      "amount": 6836.0,
+      "date": "2026-08-01",
+      "description": "Parents' Health Insurance for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Parents' Health Insurance",
+      "amount": 6836.0,
+      "date": "2026-09-01",
+      "description": "Parents' Health Insurance for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Parents' Health Insurance",
+      "amount": 6836.0,
+      "date": "2026-10-01",
+      "description": "Parents' Health Insurance for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Parents' Health Insurance",
+      "amount": 6836.0,
+      "date": "2026-11-01",
+      "description": "Parents' Health Insurance for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Parents' Health Insurance",
+      "amount": 6836.0,
+      "date": "2026-12-01",
+      "description": "Parents' Health Insurance for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Parents' Health Insurance",
+      "amount": 6836.0,
+      "date": "2027-01-01",
+      "description": "Parents' Health Insurance for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Parents' Health Insurance",
+      "amount": 6836.0,
+      "date": "2027-02-01",
+      "description": "Parents' Health Insurance for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Parents' Health Insurance",
+      "amount": 6836.0,
+      "date": "2027-03-01",
+      "description": "Parents' Health Insurance for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Credit Card Bill (India)",
+      "amount": 3000.0,
+      "date": "2026-04-01",
+      "description": "Credit Card Bill (India) for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Credit Card Bill (India)",
+      "amount": 3000.0,
+      "date": "2026-05-01",
+      "description": "Credit Card Bill (India) for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Credit Card Bill (India)",
+      "amount": 3000.0,
+      "date": "2026-06-01",
+      "description": "Credit Card Bill (India) for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Credit Card Bill (India)",
+      "amount": 3000.0,
+      "date": "2026-07-01",
+      "description": "Credit Card Bill (India) for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Credit Card Bill (India)",
+      "amount": 3000.0,
+      "date": "2026-08-01",
+      "description": "Credit Card Bill (India) for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Credit Card Bill (India)",
+      "amount": 3000.0,
+      "date": "2026-09-01",
+      "description": "Credit Card Bill (India) for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Credit Card Bill (India)",
+      "amount": 3000.0,
+      "date": "2026-10-01",
+      "description": "Credit Card Bill (India) for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Credit Card Bill (India)",
+      "amount": 3000.0,
+      "date": "2026-11-01",
+      "description": "Credit Card Bill (India) for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Credit Card Bill (India)",
+      "amount": 3000.0,
+      "date": "2026-12-01",
+      "description": "Credit Card Bill (India) for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Credit Card Bill (India)",
+      "amount": 3000.0,
+      "date": "2027-01-01",
+      "description": "Credit Card Bill (India) for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Credit Card Bill (India)",
+      "amount": 3000.0,
+      "date": "2027-02-01",
+      "description": "Credit Card Bill (India) for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Credit Card Bill (India)",
+      "amount": 3000.0,
+      "date": "2027-03-01",
+      "description": "Credit Card Bill (India) for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Rent",
+      "amount": 29000.0,
+      "date": "2026-04-01",
+      "description": "Rent for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Rent",
+      "amount": 29000.0,
+      "date": "2026-05-01",
+      "description": "Rent for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Rent",
+      "amount": 29000.0,
+      "date": "2026-06-01",
+      "description": "Rent for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Rent",
+      "amount": 29000.0,
+      "date": "2026-07-01",
+      "description": "Rent for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Rent",
+      "amount": 29000.0,
+      "date": "2026-08-01",
+      "description": "Rent for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Rent",
+      "amount": 29000.0,
+      "date": "2026-09-01",
+      "description": "Rent for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Rent",
+      "amount": 29000.0,
+      "date": "2026-10-01",
+      "description": "Rent for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Rent",
+      "amount": 29000.0,
+      "date": "2026-11-01",
+      "description": "Rent for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Rent",
+      "amount": 29000.0,
+      "date": "2026-12-01",
+      "description": "Rent for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Rent",
+      "amount": 29000.0,
+      "date": "2027-01-01",
+      "description": "Rent for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Rent",
+      "amount": 29000.0,
+      "date": "2027-02-01",
+      "description": "Rent for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Rent",
+      "amount": 29000.0,
+      "date": "2027-03-01",
+      "description": "Rent for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Electricity Bill",
+      "amount": 2500.0,
+      "date": "2026-04-01",
+      "description": "Electricity Bill for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Electricity Bill",
+      "amount": 2500.0,
+      "date": "2026-05-01",
+      "description": "Electricity Bill for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Electricity Bill",
+      "amount": 2500.0,
+      "date": "2026-06-01",
+      "description": "Electricity Bill for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Electricity Bill",
+      "amount": 2500.0,
+      "date": "2026-07-01",
+      "description": "Electricity Bill for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Electricity Bill",
+      "amount": 2500.0,
+      "date": "2026-08-01",
+      "description": "Electricity Bill for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Electricity Bill",
+      "amount": 2500.0,
+      "date": "2026-09-01",
+      "description": "Electricity Bill for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Electricity Bill",
+      "amount": 2500.0,
+      "date": "2026-10-01",
+      "description": "Electricity Bill for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Electricity Bill",
+      "amount": 2500.0,
+      "date": "2026-11-01",
+      "description": "Electricity Bill for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Electricity Bill",
+      "amount": 2500.0,
+      "date": "2026-12-01",
+      "description": "Electricity Bill for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Electricity Bill",
+      "amount": 2500.0,
+      "date": "2027-01-01",
+      "description": "Electricity Bill for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Electricity Bill",
+      "amount": 2500.0,
+      "date": "2027-02-01",
+      "description": "Electricity Bill for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Electricity Bill",
+      "amount": 2500.0,
+      "date": "2027-03-01",
+      "description": "Electricity Bill for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Water Bill",
+      "amount": 600.0,
+      "date": "2026-04-01",
+      "description": "Water Bill for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Water Bill",
+      "amount": 600.0,
+      "date": "2026-05-01",
+      "description": "Water Bill for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Water Bill",
+      "amount": 600.0,
+      "date": "2026-06-01",
+      "description": "Water Bill for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Water Bill",
+      "amount": 600.0,
+      "date": "2026-07-01",
+      "description": "Water Bill for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Water Bill",
+      "amount": 600.0,
+      "date": "2026-08-01",
+      "description": "Water Bill for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Water Bill",
+      "amount": 600.0,
+      "date": "2026-09-01",
+      "description": "Water Bill for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Water Bill",
+      "amount": 600.0,
+      "date": "2026-10-01",
+      "description": "Water Bill for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Water Bill",
+      "amount": 600.0,
+      "date": "2026-11-01",
+      "description": "Water Bill for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Water Bill",
+      "amount": 600.0,
+      "date": "2026-12-01",
+      "description": "Water Bill for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Water Bill",
+      "amount": 600.0,
+      "date": "2027-01-01",
+      "description": "Water Bill for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Water Bill",
+      "amount": 600.0,
+      "date": "2027-02-01",
+      "description": "Water Bill for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Water Bill",
+      "amount": 600.0,
+      "date": "2027-03-01",
+      "description": "Water Bill for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "WiFi",
+      "amount": 2200.0,
+      "date": "2026-04-01",
+      "description": "WiFi for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "WiFi",
+      "amount": 2200.0,
+      "date": "2026-05-01",
+      "description": "WiFi for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "WiFi",
+      "amount": 2200.0,
+      "date": "2026-06-01",
+      "description": "WiFi for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "WiFi",
+      "amount": 2200.0,
+      "date": "2026-07-01",
+      "description": "WiFi for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "WiFi",
+      "amount": 2200.0,
+      "date": "2026-08-01",
+      "description": "WiFi for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "WiFi",
+      "amount": 2200.0,
+      "date": "2026-09-01",
+      "description": "WiFi for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "WiFi",
+      "amount": 2200.0,
+      "date": "2026-10-01",
+      "description": "WiFi for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "WiFi",
+      "amount": 2200.0,
+      "date": "2026-11-01",
+      "description": "WiFi for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "WiFi",
+      "amount": 2200.0,
+      "date": "2026-12-01",
+      "description": "WiFi for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "WiFi",
+      "amount": 2200.0,
+      "date": "2027-01-01",
+      "description": "WiFi for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "WiFi",
+      "amount": 2200.0,
+      "date": "2027-02-01",
+      "description": "WiFi for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "WiFi",
+      "amount": 2200.0,
+      "date": "2027-03-01",
+      "description": "WiFi for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Mobile Recharge",
+      "amount": 1000.0,
+      "date": "2026-04-01",
+      "description": "Mobile Recharge for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Mobile Recharge",
+      "amount": 1000.0,
+      "date": "2026-05-01",
+      "description": "Mobile Recharge for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Mobile Recharge",
+      "amount": 1000.0,
+      "date": "2026-06-01",
+      "description": "Mobile Recharge for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Mobile Recharge",
+      "amount": 1000.0,
+      "date": "2026-07-01",
+      "description": "Mobile Recharge for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Mobile Recharge",
+      "amount": 1000.0,
+      "date": "2026-08-01",
+      "description": "Mobile Recharge for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Mobile Recharge",
+      "amount": 1000.0,
+      "date": "2026-09-01",
+      "description": "Mobile Recharge for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Mobile Recharge",
+      "amount": 1000.0,
+      "date": "2026-10-01",
+      "description": "Mobile Recharge for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Mobile Recharge",
+      "amount": 1000.0,
+      "date": "2026-11-01",
+      "description": "Mobile Recharge for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Mobile Recharge",
+      "amount": 1000.0,
+      "date": "2026-12-01",
+      "description": "Mobile Recharge for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Mobile Recharge",
+      "amount": 1000.0,
+      "date": "2027-01-01",
+      "description": "Mobile Recharge for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Mobile Recharge",
+      "amount": 1000.0,
+      "date": "2027-02-01",
+      "description": "Mobile Recharge for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Mobile Recharge",
+      "amount": 1000.0,
+      "date": "2027-03-01",
+      "description": "Mobile Recharge for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Grocery",
+      "amount": 15000.0,
+      "date": "2026-04-01",
+      "description": "Grocery for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Grocery",
+      "amount": 15000.0,
+      "date": "2026-05-01",
+      "description": "Grocery for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Grocery",
+      "amount": 15000.0,
+      "date": "2026-06-01",
+      "description": "Grocery for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Grocery",
+      "amount": 15000.0,
+      "date": "2026-07-01",
+      "description": "Grocery for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Grocery",
+      "amount": 15000.0,
+      "date": "2026-08-01",
+      "description": "Grocery for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Grocery",
+      "amount": 15000.0,
+      "date": "2026-09-01",
+      "description": "Grocery for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Grocery",
+      "amount": 15000.0,
+      "date": "2026-10-01",
+      "description": "Grocery for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Grocery",
+      "amount": 15000.0,
+      "date": "2026-11-01",
+      "description": "Grocery for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Grocery",
+      "amount": 15000.0,
+      "date": "2026-12-01",
+      "description": "Grocery for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Grocery",
+      "amount": 15000.0,
+      "date": "2027-01-01",
+      "description": "Grocery for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Grocery",
+      "amount": 15000.0,
+      "date": "2027-02-01",
+      "description": "Grocery for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Grocery",
+      "amount": 15000.0,
+      "date": "2027-03-01",
+      "description": "Grocery for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maid",
+      "amount": 6000.0,
+      "date": "2026-04-01",
+      "description": "Maid for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maid",
+      "amount": 6000.0,
+      "date": "2026-05-01",
+      "description": "Maid for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maid",
+      "amount": 6000.0,
+      "date": "2026-06-01",
+      "description": "Maid for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maid",
+      "amount": 6000.0,
+      "date": "2026-07-01",
+      "description": "Maid for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maid",
+      "amount": 6000.0,
+      "date": "2026-08-01",
+      "description": "Maid for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maid",
+      "amount": 6000.0,
+      "date": "2026-09-01",
+      "description": "Maid for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maid",
+      "amount": 6000.0,
+      "date": "2026-10-01",
+      "description": "Maid for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maid",
+      "amount": 6000.0,
+      "date": "2026-11-01",
+      "description": "Maid for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maid",
+      "amount": 6000.0,
+      "date": "2026-12-01",
+      "description": "Maid for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maid",
+      "amount": 6000.0,
+      "date": "2027-01-01",
+      "description": "Maid for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maid",
+      "amount": 6000.0,
+      "date": "2027-02-01",
+      "description": "Maid for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Maid",
+      "amount": 6000.0,
+      "date": "2027-03-01",
+      "description": "Maid for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Gym",
+      "amount": 3000.0,
+      "date": "2026-04-01",
+      "description": "Gym for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Gym",
+      "amount": 3000.0,
+      "date": "2026-05-01",
+      "description": "Gym for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Gym",
+      "amount": 3000.0,
+      "date": "2026-06-01",
+      "description": "Gym for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Gym",
+      "amount": 3000.0,
+      "date": "2026-07-01",
+      "description": "Gym for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Gym",
+      "amount": 3000.0,
+      "date": "2026-08-01",
+      "description": "Gym for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Gym",
+      "amount": 3000.0,
+      "date": "2026-09-01",
+      "description": "Gym for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Gym",
+      "amount": 3000.0,
+      "date": "2026-10-01",
+      "description": "Gym for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Gym",
+      "amount": 3000.0,
+      "date": "2026-11-01",
+      "description": "Gym for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Gym",
+      "amount": 3000.0,
+      "date": "2026-12-01",
+      "description": "Gym for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Gym",
+      "amount": 3000.0,
+      "date": "2027-01-01",
+      "description": "Gym for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Gym",
+      "amount": 3000.0,
+      "date": "2027-02-01",
+      "description": "Gym for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "Gym",
+      "amount": 3000.0,
+      "date": "2027-03-01",
+      "description": "Gym for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iPhone EMI",
+      "amount": 9000.0,
+      "date": "2026-04-01",
+      "description": "iPhone EMI for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iPhone EMI",
+      "amount": 9000.0,
+      "date": "2026-05-01",
+      "description": "iPhone EMI for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iPhone EMI",
+      "amount": 9000.0,
+      "date": "2026-06-01",
+      "description": "iPhone EMI for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iPhone EMI",
+      "amount": 9000.0,
+      "date": "2026-07-01",
+      "description": "iPhone EMI for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iPhone EMI",
+      "amount": 9000.0,
+      "date": "2026-08-01",
+      "description": "iPhone EMI for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iPhone EMI",
+      "amount": 9000.0,
+      "date": "2026-09-01",
+      "description": "iPhone EMI for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iPhone EMI",
+      "amount": 9000.0,
+      "date": "2026-10-01",
+      "description": "iPhone EMI for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iPhone EMI",
+      "amount": 9000.0,
+      "date": "2026-11-01",
+      "description": "iPhone EMI for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iPhone EMI",
+      "amount": 9000.0,
+      "date": "2026-12-01",
+      "description": "iPhone EMI for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iPhone EMI",
+      "amount": 9000.0,
+      "date": "2027-01-01",
+      "description": "iPhone EMI for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iPhone EMI",
+      "amount": 9000.0,
+      "date": "2027-02-01",
+      "description": "iPhone EMI for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "iPhone EMI",
+      "amount": 9000.0,
+      "date": "2027-03-01",
+      "description": "iPhone EMI for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Flexi Cap SIP",
+      "amount": 25000.0,
+      "date": "2026-04-01",
+      "description": "PP Flexi Cap SIP for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Flexi Cap SIP",
+      "amount": 25000.0,
+      "date": "2026-05-01",
+      "description": "PP Flexi Cap SIP for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Flexi Cap SIP",
+      "amount": 25000.0,
+      "date": "2026-06-01",
+      "description": "PP Flexi Cap SIP for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Flexi Cap SIP",
+      "amount": 25000.0,
+      "date": "2026-07-01",
+      "description": "PP Flexi Cap SIP for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Flexi Cap SIP",
+      "amount": 25000.0,
+      "date": "2026-08-01",
+      "description": "PP Flexi Cap SIP for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Flexi Cap SIP",
+      "amount": 25000.0,
+      "date": "2026-09-01",
+      "description": "PP Flexi Cap SIP for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Flexi Cap SIP",
+      "amount": 25000.0,
+      "date": "2026-10-01",
+      "description": "PP Flexi Cap SIP for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Flexi Cap SIP",
+      "amount": 25000.0,
+      "date": "2026-11-01",
+      "description": "PP Flexi Cap SIP for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Flexi Cap SIP",
+      "amount": 25000.0,
+      "date": "2026-12-01",
+      "description": "PP Flexi Cap SIP for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Flexi Cap SIP",
+      "amount": 25000.0,
+      "date": "2027-01-01",
+      "description": "PP Flexi Cap SIP for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Flexi Cap SIP",
+      "amount": 25000.0,
+      "date": "2027-02-01",
+      "description": "PP Flexi Cap SIP for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Flexi Cap SIP",
+      "amount": 25000.0,
+      "date": "2027-03-01",
+      "description": "PP Flexi Cap SIP for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "HDFC Mid Cap SIP",
+      "amount": 20000.0,
+      "date": "2026-04-01",
+      "description": "HDFC Mid Cap SIP for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "HDFC Mid Cap SIP",
+      "amount": 20000.0,
+      "date": "2026-05-01",
+      "description": "HDFC Mid Cap SIP for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "HDFC Mid Cap SIP",
+      "amount": 20000.0,
+      "date": "2026-06-01",
+      "description": "HDFC Mid Cap SIP for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "HDFC Mid Cap SIP",
+      "amount": 20000.0,
+      "date": "2026-07-01",
+      "description": "HDFC Mid Cap SIP for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "HDFC Mid Cap SIP",
+      "amount": 20000.0,
+      "date": "2026-08-01",
+      "description": "HDFC Mid Cap SIP for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "HDFC Mid Cap SIP",
+      "amount": 20000.0,
+      "date": "2026-09-01",
+      "description": "HDFC Mid Cap SIP for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "HDFC Mid Cap SIP",
+      "amount": 20000.0,
+      "date": "2026-10-01",
+      "description": "HDFC Mid Cap SIP for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "HDFC Mid Cap SIP",
+      "amount": 20000.0,
+      "date": "2026-11-01",
+      "description": "HDFC Mid Cap SIP for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "HDFC Mid Cap SIP",
+      "amount": 20000.0,
+      "date": "2026-12-01",
+      "description": "HDFC Mid Cap SIP for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "HDFC Mid Cap SIP",
+      "amount": 20000.0,
+      "date": "2027-01-01",
+      "description": "HDFC Mid Cap SIP for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "HDFC Mid Cap SIP",
+      "amount": 20000.0,
+      "date": "2027-02-01",
+      "description": "HDFC Mid Cap SIP for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "HDFC Mid Cap SIP",
+      "amount": 20000.0,
+      "date": "2027-03-01",
+      "description": "HDFC Mid Cap SIP for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Liquid SIP",
+      "amount": 20000.0,
+      "date": "2026-04-01",
+      "description": "PP Liquid SIP for Apr-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Liquid SIP",
+      "amount": 20000.0,
+      "date": "2026-05-01",
+      "description": "PP Liquid SIP for May-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Liquid SIP",
+      "amount": 20000.0,
+      "date": "2026-06-01",
+      "description": "PP Liquid SIP for Jun-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Liquid SIP",
+      "amount": 20000.0,
+      "date": "2026-07-01",
+      "description": "PP Liquid SIP for Jul-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Liquid SIP",
+      "amount": 20000.0,
+      "date": "2026-08-01",
+      "description": "PP Liquid SIP for Aug-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Liquid SIP",
+      "amount": 20000.0,
+      "date": "2026-09-01",
+      "description": "PP Liquid SIP for Sep-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Liquid SIP",
+      "amount": 20000.0,
+      "date": "2026-10-01",
+      "description": "PP Liquid SIP for Oct-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Liquid SIP",
+      "amount": 20000.0,
+      "date": "2026-11-01",
+      "description": "PP Liquid SIP for Nov-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Liquid SIP",
+      "amount": 20000.0,
+      "date": "2026-12-01",
+      "description": "PP Liquid SIP for Dec-26",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Liquid SIP",
+      "amount": 20000.0,
+      "date": "2027-01-01",
+      "description": "PP Liquid SIP for Jan-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Liquid SIP",
+      "amount": 20000.0,
+      "date": "2027-02-01",
+      "description": "PP Liquid SIP for Feb-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "category": "PP Liquid SIP",
+      "amount": 20000.0,
+      "date": "2027-03-01",
+      "description": "PP Liquid SIP for Mar-27",
+      "currency": "INR",
+      "paymentMethod": "Bank Transfer"
+    }
+  ],
+  "investments": [
+    {
+      "fundName": "Parag Parikh Flexi Cap",
+      "category": "Flexi Cap \u2014 CORE",
+      "investedAmount": 150000.0,
+      "currentValue": 185000.0,
+      "units": 0,
+      "avgNAV": 0,
+      "currentNAV": 0,
+      "sipAmount": 25000.0,
+      "investmentDate": "2024-01-01",
+      "returns": 35000.0
+    },
+    {
+      "fundName": "ICICI Pru Bluechip",
+      "category": "Large Cap \u2014 STABLE",
+      "investedAmount": 80000.0,
+      "currentValue": 98000.0,
+      "units": 0,
+      "avgNAV": 0,
+      "currentNAV": 0,
+      "sipAmount": 0.0,
+      "investmentDate": "2024-01-01",
+      "returns": 18000.0
+    },
+    {
+      "fundName": "HDFC Mid Cap Opp",
+      "category": "Mid Cap \u2014 GROWTH",
+      "investedAmount": 90000.0,
+      "currentValue": 115000.0,
+      "units": 0,
+      "avgNAV": 0,
+      "currentNAV": 0,
+      "sipAmount": 20000.0,
+      "investmentDate": "2024-01-01",
+      "returns": 25000.0
+    },
+    {
+      "fundName": "Kotak Small Cap",
+      "category": "Small Cap \u2014 HIGH GROWTH",
+      "investedAmount": 60000.0,
+      "currentValue": 80000.0,
+      "units": 0,
+      "avgNAV": 0,
+      "currentNAV": 0,
+      "sipAmount": 0.0,
+      "investmentDate": "2024-01-01",
+      "returns": 20000.0
+    },
+    {
+      "fundName": "Parag Parikh Liquid",
+      "category": "Liquid \u2014 PARKING/EMERGENCY",
+      "investedAmount": 100000.0,
+      "currentValue": 102000.0,
+      "units": 0,
+      "avgNAV": 0,
+      "currentNAV": 0,
+      "sipAmount": 20000.0,
+      "investmentDate": "2024-01-01",
+      "returns": 2000.0
+    },
+    {
+      "fundName": "\u2705 KEEP TOTAL",
+      "category": "Mutual Fund",
+      "investedAmount": 480000.0,
+      "currentValue": 580000.0,
+      "units": 0,
+      "avgNAV": 0,
+      "currentNAV": 0,
+      "sipAmount": 65000.0,
+      "investmentDate": "2024-01-01",
+      "returns": 100000.0
+    },
+    {
+      "fundName": "\ud83c\udfc6 GRAND TOTAL",
+      "category": "Mutual Fund",
+      "investedAmount": 480000.0,
+      "currentValue": 580000.0,
+      "units": 0,
+      "avgNAV": 0,
+      "currentNAV": 0,
+      "sipAmount": 65000.0,
+      "investmentDate": "2024-01-01",
+      "returns": 100000.0
+    }
+  ],
+  "loans": [
+    {
+      "loanType": "Home Loan",
+      "lender": "SBI",
+      "principalAmount": 6860594,
+      "interestRate": 7.3,
+      "tenure": 240,
+      "emiAmount": 57328,
+      "startDate": "2024-01-01",
+      "outstandingBalance": 6860594,
+      "totalInterestPaid": 0,
+      "totalPrincipalPaid": 0
+    }
+  ],
+  "budgets": [],
+  "goals": []
+}

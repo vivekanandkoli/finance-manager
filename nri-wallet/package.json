@@ -1,0 +1,53 @@
+{
+  "name": "nri-wallet",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "test:run": "vitest run"
+  },
+  "dependencies": {
+    "bayes-classifier": "^0.0.5",
+    "compromise": "^14.15.0",
+    "date-fns": "^4.1.0",
+    "file-saver": "^2.0.5",
+    "framer-motion": "^12.38.0",
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.7",
+    "lucide-react": "^1.8.0",
+    "natural": "^8.1.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-dropzone": "^15.0.0",
+    "react-hot-toast": "^2.6.0",
+    "recharts": "^3.8.1",
+    "stopword": "^3.1.5",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "@vitest/ui": "^4.1.4",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "fake-indexeddb": "^6.2.5",
+    "globals": "^17.4.0",
+    "happy-dom": "^20.8.9",
+    "jsdom": "^29.0.2",
+    "vite": "^8.0.4",
+    "vitest": "^4.1.4"
+  }
+}
