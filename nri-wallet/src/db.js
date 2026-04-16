@@ -1,6 +1,6 @@
 // IndexedDB wrapper for NRI Wallet
 const DB_NAME = 'NRIWalletDB';
-const DB_VERSION = 2; // Updated to support recurring transactions and bill reminders
+const DB_VERSION = 3; // Updated to support accounts and deposits
 
 let db = null;
 
@@ -89,6 +89,23 @@ export const initDB = () => {
         billStore.createIndex('dueDate', 'dueDate', { unique: false });
         billStore.createIndex('status', 'status', { unique: false });
         billStore.createIndex('isPaid', 'isPaid', { unique: false });
+      }
+
+      // Accounts store (Bank accounts, Credit cards, Cash, Wallets)
+      if (!db.objectStoreNames.contains('accounts')) {
+        const accountStore = db.createObjectStore('accounts', { keyPath: 'id', autoIncrement: true });
+        accountStore.createIndex('type', 'type', { unique: false });
+        accountStore.createIndex('name', 'name', { unique: false });
+        accountStore.createIndex('currency', 'currency', { unique: false });
+      }
+
+      // Deposits store (FD, PPF, NPS, EPF, NSC, etc.)
+      if (!db.objectStoreNames.contains('deposits')) {
+        const depositStore = db.createObjectStore('deposits', { keyPath: 'id', autoIncrement: true });
+        depositStore.createIndex('type', 'type', { unique: false });
+        depositStore.createIndex('accountName', 'accountName', { unique: false });
+        depositStore.createIndex('startDate', 'startDate', { unique: false });
+        depositStore.createIndex('maturityDate', 'maturityDate', { unique: false });
       }
     };
   });

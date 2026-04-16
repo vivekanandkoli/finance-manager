@@ -34,6 +34,26 @@ docs/
    - Bug reporting
    - Quality assurance
 
+3. **[Integration Guide](INTEGRATION_GUIDE.md)** ⭐ NEW
+   - Backend setup (Supabase)
+   - Real-time currency API integration
+   - iOS/Android mobile testing
+   - PWA deployment
+   - Complete step-by-step instructions
+
+4. **[Integration Checklist](INTEGRATION_CHECKLIST.md)** ⭐ NEW
+   - Quick reference checklist
+   - Task completion tracking
+   - Time estimates
+   - Success criteria
+
+5. **[Troubleshooting Guide](TROUBLESHOOTING.md)** ⭐ NEW
+   - Common issues and solutions
+   - Supabase connection problems
+   - Currency API errors
+   - iOS build errors
+   - PWA installation issues
+
 ### 📊 Reports
 
 1. **[Competitive Improvement Roadmap](reports/COMPETITIVE_IMPROVEMENT_ROADMAP.md)**
@@ -61,6 +81,9 @@ docs/
 - 🧪 [Test the App](guides/TESTING_GUIDE.md)
 
 ### For Developers
+- 🔗 **[Integration Guide](INTEGRATION_GUIDE.md)** - Set up backend & APIs
+- ✅ **[Integration Checklist](INTEGRATION_CHECKLIST.md)** - Track progress
+- 🔧 **[Troubleshooting](TROUBLESHOOTING.md)** - Fix common issues
 - 🗺️ [Feature Roadmap](reports/COMPETITIVE_IMPROVEMENT_ROADMAP.md)
 - ⚡ [Performance Tips](reports/OPTIMIZATION_QUICK_REFERENCE.md)
 - 📦 [Main README](../README.md)
@@ -123,6 +146,11 @@ When adding new documentation:
 ## 🔍 Finding What You Need
 
 ### I want to...
+- **Set up Supabase backend** → [Integration Guide - Backend](INTEGRATION_GUIDE.md#1-backend-integration-supabase)
+- **Integrate currency API** → [Integration Guide - Currency](INTEGRATION_GUIDE.md#2-real-time-currency-api)
+- **Test on iOS/Android** → [Integration Guide - Mobile](INTEGRATION_GUIDE.md#3-mobile-testing-iospwa)
+- **Fix connection issues** → [Troubleshooting](TROUBLESHOOTING.md)
+- **Track integration progress** → [Integration Checklist](INTEGRATION_CHECKLIST.md)
 - **Learn how to use the app** → [Quick Start](guides/QUICK_START.md)
 - **Test new features** → [Testing Guide](guides/TESTING_GUIDE.md)
 - **See what's coming next** → [Roadmap](reports/COMPETITIVE_IMPROVEMENT_ROADMAP.md)
@@ -152,5 +180,18 @@ If you can't find what you're looking for:
 
 ---
 
-**Last Updated:** 2026-04-13
+## 🚀 Quick Start: Backend Integration
+
+New to the project and need to set up the backend? Follow this sequence:
+
+1. **Read:** [Integration Guide](INTEGRATION_GUIDE.md) - Understand the architecture
+2. **Follow:** [Integration Checklist](INTEGRATION_CHECKLIST.md) - Complete each step
+3. **Fix issues:** [Troubleshooting](TROUBLESHOOTING.md) - When you get stuck
+4. **Test:** [Testing Guide](guides/TESTING_GUIDE.md) - Verify everything works
+
+**Estimated Time:** 8-12 hours for complete backend + mobile setup
+
+---
+
+**Last Updated:** 2026-04-16
 **Maintained by:** Development Team

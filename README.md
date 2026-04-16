@@ -4,6 +4,22 @@ A comprehensive personal finance management application built for NRIs (Non-Resi
 
 ## 🚀 Features
 
+### 💼 Account & Income Management (NEW! ✨)
+- **Accounts Manager** - Track bank accounts, credit cards, cash, and digital wallets
+- **Income Tracking** - Comprehensive income tracking with 10+ categories
+- **Credit Card Management** - Monitor credit utilization with visual indicators
+- **Multi-Currency Accounts** - Manage accounts in INR, USD, EUR, GBP
+- **Balance Tracking** - Real-time balance updates across all accounts
+
+### 🏦 Deposits & Savings (NEW! ✨)
+- **Fixed Deposits (FD)** - Track bank FDs with maturity alerts
+- **PPF Tracking** - Public Provident Fund with 15-year timeline
+- **EPF Management** - Employee Provident Fund contributions
+- **NPS Tracking** - National Pension System monitoring
+- **Other Schemes** - NSC, KVP, SCSS, Recurring Deposits support
+- **Maturity Alerts** - Get notified 30 days before deposit maturity
+- **Returns Calculator** - Automatic gains and percentage calculation
+
 ### ✅ Core Features (Phase 1 Complete)
 - **Multi-Currency Support** - Track expenses in INR, USD, EUR, GBP, AED, SGD
 - **Expense & Income Tracking** - Add, edit, and categorize transactions
@@ -69,8 +85,39 @@ The app will be available at `http://localhost:5173`
 
 ## 📖 Documentation
 
+### Getting Started
 - **[Quick Start Guide](docs/guides/QUICK_START.md)** - Get started quickly
 - **[Testing Guide](docs/guides/TESTING_GUIDE.md)** - How to test the application
+
+### Backend & Mobile Integration 🆕 (Ready!)
+- **[Integration Roadmap](docs/INTEGRATION_ROADMAP.md)** - 🗺️ Visual guide & 4-phase timeline
+- **[Integration Guide](docs/INTEGRATION_GUIDE.md)** - 📖 Complete setup instructions (~1000 lines)
+- **[Integration Checklist](docs/INTEGRATION_CHECKLIST.md)** - ✅ Task-by-task tracker
+- **[Troubleshooting Guide](docs/TROUBLESHOOTING.md)** - 🔧 Fix common issues
+- **[Status Overview](INTEGRATION_STATUS.md)** - 📊 Current progress & next steps
+- **Quick Setup:** `./scripts/setup-integration.sh` - 🚀 Automated setup script
+
+**What's Ready:**
+- ✅ Supabase backend setup guide (complete step-by-step)
+- ✅ Real-time currency API (multi-source fallback already working!)
+- ✅ iOS native app build instructions (Xcode + Capacitor)
+- ✅ PWA setup guide (Progressive Web App with offline mode)
+- ✅ Deployment checklist (Vercel, Netlify, TestFlight)
+- ✅ Complete troubleshooting (Supabase, APIs, iOS, PWA issues)
+
+**Time Estimate:** 8-12 hours for full backend + mobile setup
+
+### iOS App Conversion
+- **[iOS Setup Guide](IOS_SETUP_GUIDE.md)** - 📱 Convert to iOS app
+- **[iOS Quick Start](nri-wallet/QUICK_START_iOS.md)** - 🚀 Get iOS app running in 5 minutes
+
+### Bank Statement Parser 🆕 (Phase 1 Complete!)
+- **[Bank Parser Overview](docs/BANK_PARSER_README.md)** - 🏦 Auto-import bank statements
+- **[Quick Summary](docs/BANK_PARSER_QUICK_SUMMARY.md)** - What it does & how it works
+- **[Phase 1 Setup](nri-wallet/BANK_PARSER_SETUP.md)** - Installation & testing guide
+- **[Phase 1 Complete](PHASE1_COMPLETE.md)** - ✅ What's working now
+
+### Reports & Planning
 - **[Roadmap](docs/reports/COMPETITIVE_IMPROVEMENT_ROADMAP.md)** - Future features and improvements
 - **[Week 2 Report](docs/reports/WEEK2_COMPLETE.md)** - Latest completed features
 - **[Performance Guide](docs/reports/OPTIMIZATION_QUICK_REFERENCE.md)** - Optimization tips

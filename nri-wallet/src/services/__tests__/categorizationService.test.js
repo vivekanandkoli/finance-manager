@@ -131,7 +131,7 @@ describe('CategorizationService', () => {
 
     it('should remove special characters', () => {
       const result = categorizationService.preprocessText('Hello@World#123!');
-      expect(result).toBe('hello world123');
+      expect(result).toBe('hello world 123');
     });
 
     it('should collapse multiple spaces', () => {

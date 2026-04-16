@@ -1,0 +1,541 @@
+/* Bank Statement Uploader Styles */
+
+.bank-statement-uploader {
+  padding: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.uploader-header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.uploader-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+  color: #1a1a2e;
+}
+
+.uploader-header p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Dropzone */
+.dropzone {
+  border: 3px dashed #4CAF50;
+  border-radius: 12px;
+  padding: 60px 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f9fff9;
+}
+
+.dropzone:hover,
+.dropzone.active {
+  border-color: #45a049;
+  background: #f0f9f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.1);
+}
+
+.dropzone-content {
+  pointer-events: none;
+}
+
+.dropzone-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.dropzone-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 8px 0;
+}
+
+.dropzone-hint {
+  font-size: 14px;
+  color: #666;
+  margin: 4px 0 16px 0;
+}
+
+.dropzone-formats {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.dropzone-formats span {
+  padding: 6px 12px;
+  background: white;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+}
+
+.dropzone-note {
+  font-size: 12px;
+  color: #999;
+  margin-top: 16px;
+}
+
+/* Selected Files */
+.selected-files {
+  margin-top: 24px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background: white;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.btn-reset {
+  padding: 6px 12px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.btn-reset:hover {
+  background: #e0e0e0;
+}
+
+.files-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fafafa;
+  transition: all 0.2s;
+}
+
+.file-item:hover {
+  background: #f5f5f5;
+  border-color: #d0d0d0;
+}
+
+.file-icon {
+  font-size: 24px;
+  margin-right: 12px;
+}
+
+.file-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.file-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a2e;
+}
+
+.file-size {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Processing */
+.processing {
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+}
+
+.processing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.processing-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.progress-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4CAF50;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #45a049);
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+.files-status {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.status-item.status-pending {
+  background: #f5f5f5;
+}
+
+.status-item.status-processing {
+  background: #e3f2fd;
+}
+
+.status-item.status-success {
+  background: #e8f5e9;
+}
+
+.status-item.status-error {
+  background: #ffebee;
+}
+
+.status-icon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.status-name {
+  flex: 1;
+}
+
+.status-label {
+  font-size: 12px;
+  text-transform: capitalize;
+  color: #666;
+}
+
+/* Results */
+.results {
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.results-header h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.results-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summary-card {
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.summary-card.success {
+  background: #e8f5e9;
+  border: 2px solid #4CAF50;
+}
+
+.summary-card.error {
+  background: #ffebee;
+  border: 2px solid #f44336;
+}
+
+.summary-number {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.summary-card.success .summary-number {
+  color: #4CAF50;
+}
+
+.summary-card.error .summary-number {
+  color: #f44336;
+}
+
+.summary-label {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.result-item {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.result-item.result-success {
+  background: #f9fff9;
+  border-color: #c8e6c9;
+}
+
+.result-item.result-error {
+  background: #fff9f9;
+  border-color: #ffcdd2;
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.result-icon {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.result-name {
+  flex: 1;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.result-status {
+  font-size: 18px;
+}
+
+.result-details {
+  margin-left: 28px;
+  font-size: 13px;
+  color: #666;
+}
+
+.result-details p {
+  margin: 4px 0;
+}
+
+.result-error {
+  margin-left: 28px;
+  font-size: 13px;
+  color: #d32f2f;
+}
+
+.result-error p {
+  margin: 4px 0;
+}
+
+.results-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.btn-primary {
+  padding: 12px 24px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background: #45a049;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Extracted Text Section */
+.extracted-text-section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.extracted-text-section h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: #1a1a2e;
+}
+
+.text-hint {
+  color: #666;
+  font-size: 14px;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.extracted-text-card {
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.text-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.text-card-header h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #1a1a2e;
+}
+
+.text-stats {
+  font-size: 13px;
+  color: #666;
+}
+
+.extracted-text-content {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+}
+
+.extracted-text-content pre {
+  margin: 0;
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #1a1a2e;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.text-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.text-actions button {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.text-actions button:hover {
+  background: #f5f5f5;
+  border-color: #bbb;
+}
+
+.btn-copy {
+  color: #2196F3;
+}
+
+.btn-download {
+  color: #4CAF50;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bank-statement-uploader {
+    padding: 16px;
+  }
+  
+  .dropzone {
+    padding: 40px 20px;
+  }
+  
+  .dropzone-icon {
+    font-size: 48px;
+  }
+  
+  .dropzone-text {
+    font-size: 16px;
+  }
+  
+  .dropzone-formats {
+    flex-wrap: wrap;
+  }
+  
+  .results-summary {
+    grid-template-columns: 1fr;
+  }
+  
+  .text-actions {
+    flex-direction: column;
+  }
+  
+  .text-actions button {
+    width: 100%;
+  }
+}

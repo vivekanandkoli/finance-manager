@@ -14,10 +14,10 @@ const expenseCategories = [
   'Other'
 ];
 
-const currencies = ['INR', 'THB'];
+const _currencies = ['INR', 'THB'];
 
 // Income Sources
-const incomeSources = [
+const _incomeSources = [
   'Salary',
   'Freelance',
   'Dividends',
@@ -29,7 +29,7 @@ const incomeSources = [
 ];
 
 // Investment Types
-const investmentTypes = [
+const _investmentTypes = [
   'Equity',
   'Debt',
   'Hybrid',

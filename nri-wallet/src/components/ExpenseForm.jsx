@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { addRecord } from '../db';
+import { addRecord, getAllRecords, updateRecord } from '../db';
 import { categorizationService } from '../services/categorizationService';
+import { currencyService } from '../services/currencyService';
 import { useDebounce } from '../hooks/useDebounce';
 import './ExpenseForm.css';
 
@@ -33,7 +34,8 @@ function ExpenseForm({ onExpenseAdded }) {
     currency: 'INR',
     category: 'Food & Dining',
     description: '',
-    paymentMethod: 'UPI'
+    paymentMethod: 'UPI',
+    accountId: null // New: track which account
   });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -41,8 +43,16 @@ function ExpenseForm({ onExpenseAdded }) {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [autoCategorizationEnabled, setAutoCategorizationEnabled] = useState(true);
   const [aiPrediction, setAiPrediction] = useState(null);
+  const [accounts, setAccounts] = useState([]);
+  const [selectedAccount, setSelectedAccount] = useState(null);
+  const [convertedAmount, setConvertedAmount] = useState(null);
 
   const debouncedDescription = useDebounce(formData.description, 500);
+
+  // Load accounts on mount
+  useEffect(() => {
+    loadAccounts();
+  }, []);
 
   // Initialize ML model on mount
   useEffect(() => {
@@ -52,6 +62,60 @@ function ExpenseForm({ onExpenseAdded }) {
       }
     });
   }, []);
+
+  // Load all accounts
+  const loadAccounts = async () => {
+    try {
+      const accountsFromDB = await getAllRecords('accounts');
+      setAccounts(accountsFromDB);
+    } catch (error) {
+      console.error('Error loading accounts:', error);
+    }
+  };
+
+  // Handle account selection and currency sync
+  useEffect(() => {
+    if (formData.accountId) {
+      const account = accounts.find(acc => acc.id === parseInt(formData.accountId));
+      if (account) {
+        setSelectedAccount(account);
+        // Auto-sync currency with account currency
+        if (account.currency !== formData.currency) {
+          setFormData(prev => ({
+            ...prev,
+            currency: account.currency
+          }));
+        }
+      }
+    } else {
+      setSelectedAccount(null);
+    }
+  }, [formData.accountId, accounts]);
+
+  // Live currency conversion preview
+  useEffect(() => {
+    const convertAmount = async () => {
+      if (formData.amount && formData.currency && formData.currency !== 'INR') {
+        try {
+          const result = await currencyService.getExchangeRate(formData.currency, 'INR');
+          const converted = currencyService.convert(formData.amount, result.rate);
+          setConvertedAmount({
+            amount: converted,
+            rate: result.rate,
+            source: result.source
+          });
+        } catch (error) {
+          console.error('Conversion error:', error);
+          setConvertedAmount(null);
+        }
+      } else {
+        setConvertedAmount(null);
+      }
+    };
+
+    const debounceTimer = setTimeout(convertAmount, 500);
+    return () => clearTimeout(debounceTimer);
+  }, [formData.amount, formData.currency]);
 
   // Auto-categorize when description changes
   useEffect(() => {
@@ -94,15 +158,45 @@ function ExpenseForm({ onExpenseAdded }) {
     e.preventDefault();
     setLoading(true);
     
-    const expense = {
-      ...formData,
-      amount: parseFloat(formData.amount),
-      timestamp: new Date().toISOString(),
-      autoCategorized: aiPrediction?.method || null,
-    };
-
     try {
+      const expenseAmount = parseFloat(formData.amount);
+      
+      // Get exchange rate for INR conversion
+      let amountInINR = expenseAmount;
+      let exchangeRate = 1;
+      
+      if (formData.currency !== 'INR') {
+        const rateResult = await currencyService.getExchangeRate(formData.currency, 'INR');
+        exchangeRate = rateResult.rate;
+        amountInINR = currencyService.convert(expenseAmount, exchangeRate);
+      }
+
+      // Exclude id from formData to avoid conflicts with auto-increment
+      const { id, ...formDataWithoutId } = formData;
+      
+      const expense = {
+        ...formDataWithoutId,
+        amount: expenseAmount,
+        amountInINR: amountInINR,
+        exchangeRate: exchangeRate,
+        accountId: formData.accountId ? parseInt(formData.accountId) : null,
+        accountName: selectedAccount?.name || null,
+        timestamp: new Date().toISOString(),
+        autoCategorized: aiPrediction?.method || null,
+      };
+
       await addRecord('expenses', expense);
+      
+      // Update account balance if account is selected
+      if (selectedAccount) {
+        const newBalance = selectedAccount.balance - expenseAmount;
+        await updateRecord('accounts', {
+          ...selectedAccount,
+          id: selectedAccount.id,
+          balance: newBalance,
+          updatedAt: new Date().toISOString()
+        });
+      }
       
       // Learn from user's final choice if it differs from AI prediction
       if (aiPrediction && aiPrediction.category !== formData.category) {
@@ -119,11 +213,17 @@ function ExpenseForm({ onExpenseAdded }) {
         currency: 'INR',
         category: 'Food & Dining',
         description: '',
-        paymentMethod: 'UPI'
+        paymentMethod: 'UPI',
+        accountId: null
       });
       setAiPrediction(null);
       setSuggestions([]);
       setShowSuggestions(false);
+      setSelectedAccount(null);
+      setConvertedAmount(null);
+      
+      // Reload accounts to reflect updated balance
+      await loadAccounts();
       
       if (onExpenseAdded) onExpenseAdded();
       
@@ -217,7 +317,16 @@ function ExpenseForm({ onExpenseAdded }) {
               </label>
               <div className="amount-input-group">
                 <span className="currency-symbol">
-                  {formData.currency === 'THB' ? '฿' : '₹'}
+                  {formData.currency === 'INR' && '₹'}
+                  {formData.currency === 'USD' && '$'}
+                  {formData.currency === 'EUR' && '€'}
+                  {formData.currency === 'GBP' && '£'}
+                  {formData.currency === 'THB' && '฿'}
+                  {formData.currency === 'AED' && 'د.إ'}
+                  {formData.currency === 'SGD' && 'S$'}
+                  {formData.currency === 'AUD' && 'A$'}
+                  {formData.currency === 'CAD' && 'C$'}
+                  {formData.currency === 'JPY' && '¥'}
                 </span>
                 <input
                   type="number"
@@ -245,7 +354,15 @@ function ExpenseForm({ onExpenseAdded }) {
                 className="form-select"
               >
                 <option value="INR">INR (₹)</option>
+                <option value="USD">USD ($)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="GBP">GBP (£)</option>
                 <option value="THB">THB (฿)</option>
+                <option value="AED">AED (د.إ)</option>
+                <option value="SGD">SGD (S$)</option>
+                <option value="AUD">AUD (A$)</option>
+                <option value="CAD">CAD (C$)</option>
+                <option value="JPY">JPY (¥)</option>
               </select>
             </div>
           </div>
@@ -289,6 +406,52 @@ function ExpenseForm({ onExpenseAdded }) {
               </select>
             </div>
           </div>
+
+          {/* Account Selection */}
+          <div className="form-row">
+            <div className="form-group">
+              <label>
+                <span className="label-icon">🏦</span>
+                Pay From Account (Optional)
+              </label>
+              <select
+                name="accountId"
+                value={formData.accountId || ''}
+                onChange={handleChange}
+                className="form-select"
+              >
+                <option value="">💵 Cash (No Account Linked)</option>
+                {accounts.map(account => (
+                  <option key={account.id} value={account.id}>
+                    {account.type === 'bank' && '🏦'}
+                    {account.type === 'credit' && '💳'}
+                    {account.type === 'wallet' && '👛'}
+                    {account.type === 'cash' && '💵'}
+                    {' '}{account.name} ({account.currency}) - Balance: {account.currency === 'INR' ? '₹' : account.currency === 'USD' ? '$' : account.currency === 'THB' ? '฿' : ''}{account.balance.toFixed(2)}
+                  </option>
+                ))}
+              </select>
+              {selectedAccount && selectedAccount.balance < parseFloat(formData.amount || 0) && (
+                <p style={{ color: '#ef4444', fontSize: '12px', marginTop: '4px' }}>
+                  ⚠️ Insufficient balance in this account
+                </p>
+              )}
+            </div>
+          </div>
+
+          {/* Currency Conversion Preview */}
+          {convertedAmount && (
+            <div className="conversion-preview">
+              <span className="conversion-icon">💱</span>
+              <span className="conversion-text">
+                {formData.currency} {formData.amount} = ₹{convertedAmount.amount.toFixed(2)} INR
+                <span className="conversion-rate"> (Rate: {convertedAmount.rate.toFixed(4)})</span>
+              </span>
+              <span className={`conversion-source ${convertedAmount.source === 'live' ? 'live' : 'cached'}`}>
+                {convertedAmount.source === 'live' ? '🟢 Live' : convertedAmount.source === 'cache' ? '🟡 Cached' : '🔴 Database'}
+              </span>
+            </div>
+          )}
 
           <div className="form-group">
             <label>

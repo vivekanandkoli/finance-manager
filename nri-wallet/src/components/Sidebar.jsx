@@ -5,16 +5,20 @@ const Sidebar = ({ currentView, setCurrentView }) => {
 
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: '📊' },
+    { id: 'accounts', label: 'Accounts', icon: '💼' },
+    { id: 'income', label: 'Income', icon: '💸' },
     { id: 'add expense', label: 'Add Expense', icon: '➕' },
     { id: 'expense history', label: 'Expense History', icon: '📋' },
-    { id: 'analytics', label: 'Analytics', icon: '📈' },
+    { id: 'deposits', label: 'Deposits & Savings', icon: '🏦' },
+    { id: 'investments', label: 'Investments', icon: '📈' },
+    { id: 'loans', label: 'Loan Tracker', icon: '🏠' },
+    { id: 'analytics', label: 'Analytics', icon: '📊' },
     { id: 'budgets', label: 'Budget Manager', icon: '💰' },
     { id: 'bills', label: 'Bills & Recurring', icon: '📅' },
-    { id: 'investments', label: 'Investments', icon: '💼' },
-    { id: 'loans', label: 'Loan Tracker', icon: '🏦' },
     { id: 'goals', label: 'Goal Tracker', icon: '🎯' },
     { id: 'currency', label: 'Currency Converter', icon: '💱' },
     { id: 'wealth report', label: 'Wealth Report', icon: '💎' },
+    { id: 'bank statements', label: '🆕 Bank Statements', icon: '🏦' },
     { id: 'import/export', label: 'Import/Export', icon: '📤' },
     { id: 'edit data', label: 'Data Manager', icon: '🗃️' },
   ];

@@ -17,6 +17,112 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.0.0] - 2026-04-14
+
+### 🎉 Major Update - Essential Financial Features
+
+#### 💼 Accounts Manager (NEW!)
+- **Bank Accounts** - Track all savings and checking accounts
+- **Credit Cards** - Monitor balances and credit utilization
+- **Cash Tracking** - Track cash in hand
+- **Digital Wallets** - Paytm, Google Pay, PhonePe, etc.
+- **Multi-currency accounts** - 10 major currencies supported
+- **Credit utilization alerts** - Visual warnings when >70%
+- **Total assets dashboard** - See all money in one place
+
+#### 💸 Income Manager (NEW!)
+- **10 income categories** - Salary, Freelance, Business, Rental, Investment, Dividend, Interest, Bonus, Gift, Other
+- **Recurring income tracking** - Monthly, Quarterly, Yearly
+- **Taxable/non-taxable classification** - For tax planning
+- **Multi-source income** - Track all income streams
+- **Period filters** - This Month, Last Month, This Year, All Time
+- **Category breakdown** - Visual pie charts and percentages
+- **Monthly recurring summary** - Predictable income at a glance
+
+#### 🏦 Deposits & Savings Manager (NEW!)
+- **Fixed Deposits (FD)** - Track bank FDs with interest
+- **Public Provident Fund (PPF)** - 15-year scheme tracking
+- **Employee Provident Fund (EPF)** - Auto-deduction tracking
+- **National Pension System (NPS)** - Tier 1 & 2
+- **National Savings Certificate (NSC)** - Interest tracking
+- **Kisan Vikas Patra (KVP)** - Maturity calculator
+- **Senior Citizen Savings Scheme (SCSS)** - For retirees
+- **Recurring Deposits (RD)** - Monthly contribution tracking
+- **Maturity alerts** - 30-day advance notification
+- **Returns calculator** - Automatic gains and percentage
+- **Auto-renewal settings** - Never miss renewals
+
+### 🌍 Enhanced Currency Support
+- **Expanded from 2 to 10 currencies**:
+  - INR (₹), USD ($), EUR (€), GBP (£)
+  - **THB (฿) - ADDED**
+  - AED (د.إ), SGD (S$), AUD (A$), CAD (C$), JPY (¥)
+- **Centralized currency configuration** - `currencies.js` utility
+- **15 total currencies supported** - Including CHF, CNY, MYR, SAR, QAR
+- **Automatic conversion** - All totals calculated in INR
+- **Currency symbols** - Proper display in all forms
+
+### 🗄️ Database Updates
+- **Updated to version 3** from version 2
+- **New object stores**:
+  - `accounts` - All bank accounts, cards, cash, wallets
+  - `deposits` - All fixed-term savings schemes
+- **New indexes**:
+  - Accounts: type, name, currency
+  - Deposits: type, accountName, startDate, maturityDate
+
+### 📚 Documentation
+- **NEW_FEATURES_SUMMARY.md** - Complete feature documentation
+- **USAGE_GUIDE.md** - Step-by-step guide for users
+- **COMPETITIVE_ANALYSIS.md** - Comparison with Mint, ET Money, YNAB, Personal Capital
+- **CURRENCIES.md** - Complete currency documentation
+- **Updated README.md** - Added new features section
+
+### 🎨 UI/UX Improvements
+- **Modern card designs** - Gradient cards for all new features
+- **Summary dashboards** - Key metrics at a glance
+- **Visual indicators** - Credit utilization bars, maturity alerts
+- **Empty states** - Helpful onboarding for new users
+- **Responsive design** - Mobile-optimized layouts
+- **Toast notifications** - Success/error feedback
+
+### 🧭 Navigation Updates
+- **Reorganized sidebar menu**:
+  1. Dashboard
+  2. **Accounts (NEW)**
+  3. **Income (NEW)**
+  4. Add Expense
+  5. Expense History
+  6. **Deposits & Savings (NEW)**
+  7. Investments
+  8. Loan Tracker
+  9. Analytics
+  10. Budget Manager
+  11. Bills & Recurring
+  12. Goal Tracker
+  13. Currency Converter
+  14. Wealth Report
+  15. Import/Export
+  16. Data Manager
+
+### 🎯 Key Benefits
+- **Complete financial visibility** - All accounts, income, savings
+- **India-specific features** - PPF, EPF, NPS (unique advantage!)
+- **Privacy-first** - No bank linking required
+- **Tax planning** - Track 80C deductions
+- **Credit health** - Monitor utilization
+- **Retirement planning** - EPF, PPF, NPS tracking
+
+### 🏆 Competitive Advantages
+Now competitive with:
+- ✅ Mint (but better privacy)
+- ✅ Personal Capital (but free)
+- ✅ ET Money (but no bank linking)
+- ✅ YNAB (but more comprehensive)
+- ✅ Money View (but no ads)
+
+---
+
 ## [1.2.0] - 2026-04-14
 
 ### 🧹 Project Organization

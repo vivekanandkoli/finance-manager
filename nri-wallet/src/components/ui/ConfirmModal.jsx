@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
-import { X, AlertTriangle, CheckCircle, Info, AlertCircle } from 'lucide-react';
+import './ConfirmModal.css';
 
 /**
  * Optimized Confirmation Modal Component
@@ -42,72 +42,73 @@ export const ConfirmModal = React.memo(({
 
   if (!isOpen) return null;
 
-  // Icon based on type
+  // Icon based on type (using emojis)
   const icons = {
-    warning: <AlertTriangle className="text-yellow-600" size={48} />,
-    danger: <AlertCircle className="text-red-600" size={48} />,
-    info: <Info className="text-blue-600" size={48} />,
-    success: <CheckCircle className="text-green-600" size={48} />
+    warning: '⚠️',
+    danger: '🗑️',
+    info: 'ℹ️',
+    success: '✅'
   };
 
   // Button colors based on type
   const buttonColors = {
-    warning: 'bg-yellow-600 hover:bg-yellow-700',
-    danger: 'bg-red-600 hover:bg-red-700',
-    info: 'bg-blue-600 hover:bg-blue-700',
-    success: 'bg-green-600 hover:bg-green-700'
+    warning: '#f59e0b',
+    danger: '#ef4444',
+    info: '#3b82f6',
+    success: '#10b981'
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="confirm-modal-overlay">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-black/50 backdrop-blur-sm animate-fadeIn"
+        className="confirm-modal-backdrop"
         onClick={!isLoading ? onClose : undefined}
       />
       
       {/* Modal */}
-      <div className="relative bg-white rounded-xl shadow-2xl max-w-md w-full mx-4 animate-slideUp">
+      <div className="confirm-modal-content">
         {/* Close button */}
         {!isLoading && (
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+            className="confirm-modal-close"
           >
-            <X size={24} />
+            ✕
           </button>
         )}
 
         {/* Content */}
-        <div className="p-6">
+        <div className="confirm-modal-body">
           {/* Icon */}
-          <div className="flex justify-center mb-4">
+          <div className="confirm-modal-icon">
             {icons[type]}
           </div>
 
           {/* Title */}
-          <h2 className="text-2xl font-bold text-gray-800 text-center mb-2">
+          <h2 className="confirm-modal-title">
             {title}
           </h2>
 
           {/* Message */}
-          <p className="text-gray-600 text-center mb-6">
+          <p className="confirm-modal-message">
             {message}
           </p>
 
           {/* Actions */}
-          <div className="flex gap-3">
+          <div className="confirm-modal-actions">
             <button
               onClick={onClose}
               disabled={isLoading}
-              className="flex-1 px-4 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="confirm-modal-btn confirm-modal-btn-cancel"
             >
               {cancelText}
             </button>
             <button
               onClick={handleConfirm}
               disabled={isLoading}
-              className={`flex-1 px-4 py-3 text-white rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${buttonColors[type]}`}
+              className="confirm-modal-btn confirm-modal-btn-confirm"
+              style={{ backgroundColor: buttonColors[type] }}
             >
               {isLoading ? 'Processing...' : confirmText}
             </button>

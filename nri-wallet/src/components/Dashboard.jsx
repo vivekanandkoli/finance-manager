@@ -7,18 +7,116 @@ import {
   ComposedChart
 } from 'recharts';
 import { getAllRecords } from '../db';
+import { currencyService } from '../services/currencyService';
 import './Dashboard.css';
+
+// Account Card Component with Live Currency Conversion
+function AccountCard({ account }) {
+  const [convertedBalance, setConvertedBalance] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const convertBalance = async () => {
+      if (account.currency !== 'INR') {
+        setLoading(true);
+        try {
+          const result = await currencyService.getExchangeRate(account.currency, 'INR');
+          const converted = currencyService.convert(account.balance, result.rate);
+          setConvertedBalance({
+            amount: converted,
+            rate: result.rate,
+            source: result.source
+          });
+        } catch (error) {
+          console.error('Conversion error:', error);
+        } finally {
+          setLoading(false);
+        }
+      }
+    };
+
+    convertBalance();
+  }, [account]);
+
+  const getCurrencySymbol = (currency) => {
+    const symbols = {
+      'INR': '₹',
+      'USD': '$',
+      'EUR': '€',
+      'GBP': '£',
+      'THB': '฿',
+      'AED': 'د.إ',
+      'SGD': 'S$',
+      'AUD': 'A$',
+      'CAD': 'C$',
+      'JPY': '¥'
+    };
+    return symbols[currency] || currency;
+  };
+
+  const getAccountIcon = (type) => {
+    const icons = {
+      'bank': '🏦',
+      'credit': '💳',
+      'wallet': '👛',
+      'cash': '💵'
+    };
+    return icons[type] || '🏦';
+  };
+
+  return (
+    <div className="account-card-dashboard">
+      <div className="account-header-dash">
+        <span className="account-icon-dash">{getAccountIcon(account.type)}</span>
+        <div className="account-info-dash">
+          <h4>{account.name}</h4>
+          <p className="account-type-dash">{account.type}</p>
+        </div>
+      </div>
+      <div className="account-balance-dash">
+        <div className="balance-row">
+          <span className="balance-label">Balance:</span>
+          <span className="balance-amount-original">
+            {getCurrencySymbol(account.currency)} {account.balance.toLocaleString(undefined, {maximumFractionDigits: 2})}
+          </span>
+        </div>
+        {convertedBalance && (
+          <div className="balance-row converted">
+            <span className="balance-label">In INR:</span>
+            <span className="balance-amount-converted">
+              ₹ {convertedBalance.amount.toLocaleString(undefined, {maximumFractionDigits: 2})}
+            </span>
+            <span className={`live-indicator ${convertedBalance.source === 'live' ? 'live' : 'cached'}`}>
+              {convertedBalance.source === 'live' ? '🟢' : '🟡'}
+            </span>
+          </div>
+        )}
+        {loading && (
+          <div className="conversion-loading">Converting...</div>
+        )}
+      </div>
+      {convertedBalance && (
+        <div className="exchange-rate-info">
+          1 {account.currency} = ₹{convertedBalance.rate.toFixed(4)}
+        </div>
+      )}
+    </div>
+  );
+}
 
 function Dashboard() {
   const [expenses, setExpenses] = useState([]);
   const [investments, setInvestments] = useState([]);
   const [loans, setLoans] = useState([]);
   const [income, setIncome] = useState([]);
+  const [accounts, setAccounts] = useState([]);
   const [stats, setStats] = useState({
     totalExpensesTHB: 0,
     totalExpensesINR: 0,
     totalExpensesTHBThisMonth: 0,
     totalExpensesINRThisMonth: 0,
+    totalExpensesINREquivalent: 0,
+    totalExpensesThisMonthINREquivalent: 0,
     expenseCount: 0,
     topCategory: 'N/A',
     totalInvestments: 0,
@@ -26,7 +124,9 @@ function Dashboard() {
     netWorth: 0,
     totalIncome: 0,
     monthlyCashFlow: 0,
-    savingsRate: 0
+    savingsRate: 0,
+    totalAccountBalanceINR: 0,
+    accountsCount: 0
   });
 
   const [netWorthHistory, setNetWorthHistory] = useState([]);
@@ -40,11 +140,13 @@ function Dashboard() {
         const investmentsFromDB = await getAllRecords('investments');
         const loansFromDB = await getAllRecords('loans');
         const incomeFromDB = await getAllRecords('income');
+        const accountsFromDB = await getAllRecords('accounts');
         
         setExpenses(expensesFromDB);
         setInvestments(investmentsFromDB);
         setLoans(loansFromDB);
         setIncome(incomeFromDB);
+        setAccounts(accountsFromDB);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -54,48 +156,62 @@ function Dashboard() {
 
   // Memoized stats calculation
   useEffect(() => {
-    if (expenses.length > 0 || investments.length > 0 || loans.length > 0 || income.length > 0) {
-      calculateStats(expenses, investments, loans, income);
+    if (expenses.length > 0 || investments.length > 0 || loans.length > 0 || income.length > 0 || accounts.length > 0) {
+      calculateStats(expenses, investments, loans, income, accounts);
       calculateNetWorthHistory(investments, loans);
       calculateCashFlow(income, expenses);
       calculateMonthlyTrends(expenses, income);
     }
-  }, [expenses, investments, loans, income]);
+  }, [expenses, investments, loans, income, accounts]);
 
-  const calculateStats = (expenseList, investmentList, loanList, incomeList) => {
+  const calculateStats = async (expenseList, investmentList, loanList, incomeList, accountsList) => {
     const now = new Date();
     const currentMonth = now.getMonth();
     const currentYear = now.getFullYear();
+    
+    console.log('📊 Dashboard Stats Calculation:');
+    console.log(`Current Month: ${currentMonth} (${now.toLocaleString('default', { month: 'long' })})`);
+    console.log(`Current Year: ${currentYear}`);
+    console.log(`Total Expenses in DB: ${expenseList.length}`);
 
     const totalExpensesTHB = expenseList
       .filter(e => e.currency === 'THB')
-      .reduce((sum, e) => sum + e.amount, 0);
+      .reduce((sum, e) => sum + (e.amount || 0), 0);
 
     const totalExpensesINR = expenseList
-      .filter(e => e.currency === 'INR')
-      .reduce((sum, e) => sum + e.amount, 0);
+      .filter(e => (e.currency || 'INR') === 'INR')
+      .reduce((sum, e) => sum + (e.amount || 0), 0);
 
     const totalExpensesTHBThisMonth = expenseList
       .filter(e => {
-        const expenseDate = new Date(e.date);
-        return e.currency === 'THB' && 
-               expenseDate.getMonth() === currentMonth && 
+        const expenseDate = new Date(e.date || e.timestamp);
+        const isThisMonth = expenseDate.getMonth() === currentMonth && 
                expenseDate.getFullYear() === currentYear;
+        if (e.currency === 'THB') {
+          console.log(`THB Expense: ${e.description} - Date: ${e.date || e.timestamp} - Parsed: ${expenseDate} - This Month: ${isThisMonth}`);
+        }
+        return e.currency === 'THB' && isThisMonth;
       })
-      .reduce((sum, e) => sum + e.amount, 0);
+      .reduce((sum, e) => sum + (e.amount || 0), 0);
 
     const totalExpensesINRThisMonth = expenseList
       .filter(e => {
-        const expenseDate = new Date(e.date);
-        return e.currency === 'INR' && 
-               expenseDate.getMonth() === currentMonth && 
+        const expenseDate = new Date(e.date || e.timestamp);
+        const isThisMonth = expenseDate.getMonth() === currentMonth && 
                expenseDate.getFullYear() === currentYear;
+        if ((e.currency || 'INR') === 'INR') {
+          console.log(`INR Expense: ${e.description} - Date: ${e.date || e.timestamp} - Parsed: ${expenseDate} - This Month: ${isThisMonth}`);
+        }
+        return (e.currency || 'INR') === 'INR' && isThisMonth;
       })
-      .reduce((sum, e) => sum + e.amount, 0);
+      .reduce((sum, e) => sum + (e.amount || 0), 0);
+    
+    console.log(`✅ THB This Month: ฿${totalExpensesTHBThisMonth.toFixed(2)}`);
+    console.log(`✅ INR This Month: ₹${totalExpensesINRThisMonth.toFixed(2)}`);
 
     const categoryTotals = {};
     expenseList.forEach(e => {
-      categoryTotals[e.category] = (categoryTotals[e.category] || 0) + e.amount;
+      categoryTotals[e.category] = (categoryTotals[e.category] || 0) + (e.amount || 0);
     });
     
     const topCategory = Object.keys(categoryTotals).length > 0
@@ -109,17 +225,53 @@ function Dashboard() {
     const netWorth = totalInvestments - totalLoans;
 
     // Calculate income
-    const totalIncome = incomeList.reduce((sum, inc) => sum + inc.amount, 0);
+    const totalIncome = incomeList.reduce((sum, inc) => sum + (inc.amount || 0), 0);
     const monthlyIncome = incomeList
       .filter(inc => {
-        const incomeDate = new Date(inc.date);
+        const incomeDate = new Date(inc.date || inc.timestamp);
         return incomeDate.getMonth() === currentMonth && 
                incomeDate.getFullYear() === currentYear;
       })
-      .reduce((sum, inc) => sum + inc.amount, 0);
+      .reduce((sum, inc) => sum + (inc.amount || 0), 0);
 
-    // Cash flow and savings rate
-    const monthlyCashFlow = monthlyIncome - (totalExpensesINRThisMonth + totalExpensesTHBThisMonth / 2.5);
+    // Calculate total account balance in INR with live conversion
+    let totalAccountBalanceINR = 0;
+    for (const account of accountsList) {
+      if (account.currency === 'INR') {
+        totalAccountBalanceINR += account.balance;
+      } else {
+        try {
+          const rateResult = await currencyService.getExchangeRate(account.currency, 'INR');
+          const convertedBalance = currencyService.convert(account.balance, rateResult.rate);
+          totalAccountBalanceINR += convertedBalance;
+        } catch (error) {
+          console.error(`Failed to convert ${account.currency} to INR:`, error);
+          // Fallback to approximate rate
+          totalAccountBalanceINR += account.balance * 2.5; // Approximate fallback
+        }
+      }
+    }
+
+    // Convert all expenses to INR for unified totals
+    let totalExpensesINREquivalent = totalExpensesINR;
+    let totalExpensesThisMonthINREquivalent = totalExpensesINRThisMonth;
+    
+    // Convert THB to INR
+    if (totalExpensesTHB > 0 || totalExpensesTHBThisMonth > 0) {
+      try {
+        const thbToInrRate = await currencyService.getExchangeRate('THB', 'INR');
+        totalExpensesINREquivalent += totalExpensesTHB * thbToInrRate.rate;
+        totalExpensesThisMonthINREquivalent += totalExpensesTHBThisMonth * thbToInrRate.rate;
+      } catch (error) {
+        console.error('Failed to get THB to INR rate:', error);
+        // Fallback rate
+        totalExpensesINREquivalent += totalExpensesTHB * 2.5;
+        totalExpensesThisMonthINREquivalent += totalExpensesTHBThisMonth * 2.5;
+      }
+    }
+
+    // Cash flow and savings rate (now using INR equivalent)
+    const monthlyCashFlow = monthlyIncome - totalExpensesThisMonthINREquivalent;
     const savingsRate = monthlyIncome > 0 ? ((monthlyCashFlow / monthlyIncome) * 100).toFixed(1) : 0;
 
     setStats({
@@ -127,6 +279,8 @@ function Dashboard() {
       totalExpensesINR,
       totalExpensesTHBThisMonth,
       totalExpensesINRThisMonth,
+      totalExpensesINREquivalent,
+      totalExpensesThisMonthINREquivalent,
       expenseCount: expenseList.length,
       topCategory,
       totalInvestments,
@@ -136,7 +290,9 @@ function Dashboard() {
       totalIncome,
       monthlyIncome,
       monthlyCashFlow,
-      savingsRate
+      savingsRate,
+      totalAccountBalanceINR,
+      accountsCount: accountsList.length
     });
   };
 
@@ -415,9 +571,9 @@ function Dashboard() {
         <motion.div className="stat-card gradient-1" variants={itemVariants} whileHover={{ scale: 1.05, y: -5 }}>
           <div className="stat-icon">💰</div>
           <div className="stat-content">
-            <h3>Net Worth</h3>
-            <p className="stat-value">₹{stats.netWorth.toLocaleString()}</p>
-            <span className="stat-change positive">↑ Assets - Liabilities</span>
+            <h3>Total Accounts Balance</h3>
+            <p className="stat-value">₹{stats.totalAccountBalanceINR.toLocaleString(undefined, {maximumFractionDigits: 0})}</p>
+            <span className="stat-change positive">↑ {stats.accountsCount} Accounts</span>
           </div>
         </motion.div>
 
@@ -435,9 +591,9 @@ function Dashboard() {
         <motion.div className="stat-card gradient-3" variants={itemVariants} whileHover={{ scale: 1.05, y: -5 }}>
           <div className="stat-icon">📈</div>
           <div className="stat-content">
-            <h3>Savings Rate</h3>
-            <p className="stat-value">{stats.savingsRate}%</p>
-            <span className="stat-change positive">Target: 20%+</span>
+            <h3>Net Worth</h3>
+            <p className="stat-value">₹{stats.netWorth.toLocaleString()}</p>
+            <span className="stat-change positive">Assets - Liabilities</span>
           </div>
         </motion.div>
 
@@ -445,11 +601,26 @@ function Dashboard() {
           <div className="stat-icon">📊</div>
           <div className="stat-content">
             <h3>This Month Expenses</h3>
-            <p className="stat-value">₹{(stats.totalExpensesINRThisMonth + stats.totalExpensesTHBThisMonth / 2.5).toLocaleString(undefined, {maximumFractionDigits: 0})}</p>
+            <p className="stat-value">₹{stats.totalExpensesThisMonthINREquivalent.toLocaleString(undefined, {maximumFractionDigits: 0})}</p>
             <span className="stat-change">{stats.topCategory} (Top Category)</span>
           </div>
         </motion.div>
       </div>
+
+      {/* Accounts Overview Section */}
+      {accounts.length > 0 && (
+        <motion.div className="chart-card full-width" variants={itemVariants}>
+          <div className="chart-header">
+            <h3>💳 Accounts Overview</h3>
+            <p className="chart-subtitle">All your accounts with live currency conversion</p>
+          </div>
+          <div className="accounts-grid">
+            {accounts.map(account => (
+              <AccountCard key={account.id} account={account} />
+            ))}
+          </div>
+        </motion.div>
+      )}
 
       {/* Net Worth Over Time */}
       <motion.div className="chart-card full-width" variants={itemVariants}>

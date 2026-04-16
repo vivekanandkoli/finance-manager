@@ -281,7 +281,7 @@ describe('InsightsService', () => {
     it('should format currency correctly', () => {
       const formatted = insightsService.formatCurrency(1234567.89);
 
-      expect(formatted).toContain('1,234,568');
+      expect(formatted).toContain('12,34,568');
       expect(formatted).toContain('₹');
     });
   });

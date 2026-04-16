@@ -19,6 +19,10 @@ const DataImport = lazy(() => import('./components/DataImport'));
 const WealthReport = lazy(() => import('./components/WealthReport'));
 const DataManager = lazy(() => import('./components/DataManager'));
 const BillReminders = lazy(() => import('./components/BillReminders'));
+const AccountsManager = lazy(() => import('./components/AccountsManager'));
+const IncomeManager = lazy(() => import('./components/IncomeManager'));
+const DepositsManager = lazy(() => import('./components/DepositsManager'));
+const BankStatementUploader = lazy(() => import('./components/BankStatementUploader'));
 
 function App() {
   const [currentView, setCurrentView] = useState('dashboard');
@@ -58,6 +62,13 @@ function App() {
             {currentView === 'bills' && <BillReminders />}
             {currentView === 'analytics' && <Analytics />}
             {currentView === 'wealth report' && <WealthReport />}
+            {currentView === 'accounts' && <AccountsManager />}
+            {currentView === 'income' && <IncomeManager />}
+            {currentView === 'deposits' && <DepositsManager />}
+            {currentView === 'bank statements' && <BankStatementUploader onComplete={(results) => {
+              console.log('Bank statements processed:', results);
+              // Phase 2: Parse transactions from results
+            }} />}
             {currentView === 'import/export' && <DataImport />}
             {currentView === 'edit data' && <DataManager />}
           </Suspense>

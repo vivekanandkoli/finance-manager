@@ -254,9 +254,9 @@ class InsightsService {
     // Subscription optimization
     const subscriptions = thisMonth.filter(e => 
       e.recurring || 
-      ['Netflix', 'Spotify', 'Prime', 'Gym'].some(s => 
+      (e.description && ['Netflix', 'Spotify', 'Prime', 'Gym'].some(s => 
         e.description.toLowerCase().includes(s.toLowerCase())
-      )
+      ))
     );
     
     if (subscriptions.length > 0) {

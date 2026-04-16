@@ -1,98 +1,36 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import { getAllRecords, deleteRecord } from '../db';
+import { getAllRecords, deleteRecord, updateRecord } from '../db';
 import toast from 'react-hot-toast';
-import { SearchBar, LoadingSpinner, CardSkeleton, ConfirmModal, NoExpenses, NoSearchResults } from './ui';
+import { currencyService } from '../services/currencyService';
 import './ExpenseList.css';
-
-// Memoized ExpenseCard component to prevent unnecessary re-renders
-const ExpenseCard = React.memo(({ expense, onDelete }) => {
-  const getCategoryIcon = useCallback((category) => {
-    const icons = {
-      'Food & Dining': '🍽️',
-      'Transportation': '🚗',
-      'Utilities': '💡',
-      'Rent': '🏠',
-      'Shopping': '🛍️',
-      'Entertainment': '🎬',
-      'Healthcare': '🏥',
-      'Insurance': '🛡️',
-      'EMI/Loan': '💳',
-      'Investment': '📈',
-      'Salary': '💰',
-      'Income': '💰',
-      'Other': '📦'
-    };
-    
-    for (const [key, icon] of Object.entries(icons)) {
-      if (category?.toLowerCase().includes(key.toLowerCase())) {
-        return icon;
-      }
-    }
-    return '💵';
-  }, []);
-
-  return (
-    <div className="expense-item-card">
-      <div className="expense-item-header">
-        <div className="expense-category-badge">
-          <span className="category-icon">{getCategoryIcon(expense.category)}</span>
-          <span className="category-name">{expense.category || 'Uncategorized'}</span>
-        </div>
-        <div className="expense-amount-badge" style={{
-          background: expense.currency === 'THB' 
-            ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
-            : 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
-        }}>
-          {expense.currency === 'THB' ? '฿' : '₹'}
-          {Number(expense.amount || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-        </div>
-      </div>
-
-      {expense.description && (
-        <p className="expense-description">{expense.description}</p>
-      )}
-
-      <div className="expense-item-footer">
-        <div className="expense-meta">
-          <span className="expense-date">📅 {expense.date || 'No date'}</span>
-          <span className="expense-payment">💳 {expense.paymentMethod || expense.paymentMode || 'N/A'}</span>
-        </div>
-        <button 
-          onClick={() => onDelete(expense)}
-          className="delete-btn"
-          title="Delete expense"
-        >
-          🗑️
-        </button>
-      </div>
-    </div>
-  );
-});
-
-ExpenseCard.displayName = 'ExpenseCard';
 
 function ExpenseList({ refreshTrigger }) {
   const [expenses, setExpenses] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCurrency, setSelectedCurrency] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
   const [deleteModal, setDeleteModal] = useState({ isOpen: false, expense: null });
-  const [filter, setFilter] = useState({
-    currency: 'ALL',
-    category: 'ALL',
-    searchTerm: '',
-    startDate: '',
-    endDate: ''
-  });
+  const [exchangeRates, setExchangeRates] = useState({});
+  const [selectedExpenses, setSelectedExpenses] = useState([]);
+  
+  // Pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 20;
 
-  // Memoized loadExpenses function
+  // Load expenses
   const loadExpenses = useCallback(async () => {
     try {
       setLoading(true);
       const allExpenses = await getAllRecords('expenses');
-      const sorted = allExpenses.sort((a, b) => new Date(b.date) - new Date(a.date));
-      setExpenses(sorted);
-      toast.success(`Loaded ${sorted.length} expenses`);
+      const sortedExpenses = allExpenses.sort((a, b) => 
+        new Date(b.date || b.timestamp) - new Date(a.date || a.timestamp)
+      );
+      setExpenses(sortedExpenses);
     } catch (error) {
-      console.error('Error loading expenses:', error);
+      console.error('Failed to load expenses:', error);
       toast.error('Failed to load expenses');
     } finally {
       setLoading(false);
@@ -101,87 +39,50 @@ function ExpenseList({ refreshTrigger }) {
 
   useEffect(() => {
     loadExpenses();
-  }, [refreshTrigger, loadExpenses]);
+  }, [loadExpenses, refreshTrigger]);
 
-  // Memoized delete handler
-  const handleDeleteClick = useCallback((expense) => {
-    setDeleteModal({ isOpen: true, expense });
-  }, []);
-
-  const handleDeleteConfirm = useCallback(async () => {
-    try {
-      await deleteRecord('expenses', deleteModal.expense.id);
-      toast.success('Expense deleted successfully');
-      await loadExpenses();
-      setDeleteModal({ isOpen: false, expense: null });
-    } catch (error) {
-      toast.error('Failed to delete expense');
+  // Load exchange rates for non-INR currencies
+  useEffect(() => {
+    const loadExchangeRates = async () => {
+      const uniqueCurrencies = [...new Set(expenses.map(e => e.currency || 'INR'))];
+      const rates = {};
+      
+      for (const currency of uniqueCurrencies) {
+        if (currency !== 'INR') {
+          try {
+            const rateData = await currencyService.getExchangeRate(currency, 'INR');
+            rates[currency] = rateData.rate;
+          } catch (error) {
+            console.error(`Failed to get exchange rate for ${currency}:`, error);
+            // Fallback rates
+            rates[currency] = currency === 'THB' ? 2.5 : 1;
+          }
+        }
+      }
+      
+      setExchangeRates(rates);
+    };
+    
+    if (expenses.length > 0) {
+      loadExchangeRates();
     }
-  }, [deleteModal.expense, loadExpenses]);
+  }, [expenses]);
 
-  const handleDeleteCancel = useCallback(() => {
-    setDeleteModal({ isOpen: false, expense: null });
-  }, []);
-
-  // Memoized search handler
-  const handleSearch = useCallback((searchTerm) => {
-    setFilter(prev => ({ ...prev, searchTerm }));
-  }, []);
-
-  // Memoized filter handlers
-  const handleCurrencyChange = useCallback((e) => {
-    setFilter(prev => ({ ...prev, currency: e.target.value }));
-  }, []);
-
-  const handleCategoryChange = useCallback((e) => {
-    setFilter(prev => ({ ...prev, category: e.target.value }));
-  }, []);
-
-  const handleStartDateChange = useCallback((e) => {
-    setFilter(prev => ({ ...prev, startDate: e.target.value }));
-  }, []);
-
-  const handleEndDateChange = useCallback((e) => {
-    setFilter(prev => ({ ...prev, endDate: e.target.value }));
-  }, []);
-
-  const clearFilters = useCallback(() => {
-    setFilter({ currency: 'ALL', category: 'ALL', searchTerm: '', startDate: '', endDate: '' });
-    toast.success('Filters cleared');
-  }, []);
-
-  // Memoized filtered expenses
-  const filteredExpenses = useMemo(() => expenses.filter(expense => {
-    // Currency filter
-    if (filter.currency !== 'ALL' && expense.currency !== filter.currency) return false;
+  // Calculate summary stats
+  const summaryStats = useMemo(() => {
+    const total = expenses.reduce((sum, exp) => sum + (exp.amount || 0), 0);
+    const count = expenses.length;
+    const avgExpense = count > 0 ? total / count : 0;
     
-    // Category filter
-    if (filter.category !== 'ALL' && expense.category !== filter.category) return false;
-    
-    // Search term filter
-    if (filter.searchTerm) {
-      const search = filter.searchTerm.toLowerCase();
-      const matchesCategory = expense.category?.toLowerCase().includes(search);
-      const matchesDescription = expense.description?.toLowerCase().includes(search);
-      if (!matchesCategory && !matchesDescription) return false;
-    }
-    
-    // Date range filter
-    if (filter.startDate && expense.date < filter.startDate) return false;
-    if (filter.endDate && expense.date > filter.endDate) return false;
-    
-    return true;
-  }), [expenses, filter]);
+    // Count by currency
+    const currencyTotals = expenses.reduce((acc, exp) => {
+      const curr = exp.currency || 'INR';
+      acc[curr] = (acc[curr] || 0) + (exp.amount || 0);
+      return acc;
+    }, {});
 
-  // Memoized totals
-  const totals = useMemo(() => ({
-    thb: filteredExpenses
-      .filter(e => e.currency === 'THB')
-      .reduce((sum, e) => sum + Number(e.amount || 0), 0),
-    inr: filteredExpenses
-      .filter(e => e.currency === 'INR')
-      .reduce((sum, e) => sum + Number(e.amount || 0), 0)
-  }), [filteredExpenses]);
+    return { total, count, avgExpense, currencyTotals };
+  }, [expenses]);
 
   // Memoized categories
   const categories = useMemo(() => 
@@ -189,156 +90,517 @@ function ExpenseList({ refreshTrigger }) {
     [expenses]
   );
 
-  // Check if any filters are active
-  const hasActiveFilters = useMemo(() => 
-    filter.searchTerm || filter.currency !== 'ALL' || filter.category !== 'ALL' || filter.startDate || filter.endDate,
-    [filter]
+  // Memoized currencies
+  const currencies = useMemo(() => 
+    [...new Set(expenses.map(e => e.currency || 'INR'))].sort(),
+    [expenses]
   );
 
-  return (
-    <div className="expense-list-container">
-      <div className="expense-list-header">
-        <div>
-          <h2 style={{ margin: 0, fontSize: '28px', fontWeight: '700', color: '#1e293b' }}>
-            Expense History
-          </h2>
-          <p style={{ margin: '4px 0 0 0', fontSize: '14px', color: '#64748b' }}>
-            View and manage all your transactions
-          </p>
+  // Filter expenses
+  const filteredExpenses = useMemo(() => {
+    return expenses.filter(expense => {
+      const matchesSearch = !searchTerm || 
+        (expense.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+         expense.category?.toLowerCase().includes(searchTerm.toLowerCase()));
+      
+      const matchesCurrency = selectedCurrency === 'all' || 
+        (expense.currency || 'INR') === selectedCurrency;
+      
+      const matchesCategory = selectedCategory === 'all' || 
+        expense.category === selectedCategory;
+      
+      const matchesStartDate = !startDate || 
+        new Date(expense.date || expense.timestamp) >= new Date(startDate);
+      
+      const matchesEndDate = !endDate || 
+        new Date(expense.date || expense.timestamp) <= new Date(endDate);
+      
+      return matchesSearch && matchesCurrency && matchesCategory && 
+             matchesStartDate && matchesEndDate;
+    });
+  }, [expenses, searchTerm, selectedCurrency, selectedCategory, startDate, endDate]);
+
+  // Pagination
+  const totalPages = Math.ceil(filteredExpenses.length / itemsPerPage);
+  const paginatedExpenses = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    return filteredExpenses.slice(startIndex, startIndex + itemsPerPage);
+  }, [filteredExpenses, currentPage]);
+
+  // Reset to page 1 when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, selectedCurrency, selectedCategory, startDate, endDate]);
+
+  // Delete handlers
+  const handleDeleteClick = useCallback((expense) => {
+    setDeleteModal({ isOpen: true, expense });
+  }, []);
+
+  const handleDeleteConfirm = useCallback(async () => {
+    try {
+      const expense = deleteModal.expense;
+      
+      // Refund account balance if expense was linked to an account
+      if (expense.accountId) {
+        try {
+          const accounts = await getAllRecords('accounts');
+          const account = accounts.find(acc => acc.id === expense.accountId);
+          
+          if (account) {
+            const refundedBalance = account.balance + expense.amount;
+            await updateRecord('accounts', {
+              ...account,
+              id: account.id,
+              balance: refundedBalance,
+              updatedAt: new Date().toISOString()
+            });
+          }
+        } catch (accountError) {
+          console.error('Failed to refund account:', accountError);
+        }
+      }
+      
+      await deleteRecord('expenses', expense.id);
+      toast.success('Expense deleted successfully');
+      await loadExpenses();
+      setDeleteModal({ isOpen: false, expense: null });
+    } catch (error) {
+      console.error('Failed to delete expense:', error);
+      toast.error('Failed to delete expense');
+    }
+  }, [deleteModal, loadExpenses]);
+
+  const handleDeleteCancel = useCallback(() => {
+    setDeleteModal({ isOpen: false, expense: null });
+  }, []);
+
+  // Bulk delete handler
+  const handleBulkDelete = useCallback(async () => {
+    try {
+      // Delete all selected expenses
+      for (const expenseId of selectedExpenses) {
+        await deleteRecord('expenses', expenseId);
+      }
+      
+      toast.success(`Successfully deleted ${selectedExpenses.length} expense(s)`);
+      setSelectedExpenses([]);
+      await loadExpenses();
+    } catch (error) {
+      console.error('Failed to delete expenses:', error);
+      toast.error('Failed to delete some expenses');
+    }
+  }, [selectedExpenses, loadExpenses]);
+
+  // Clear all filters
+  const clearFilters = useCallback(() => {
+    setSearchTerm('');
+    setSelectedCurrency('all');
+    setSelectedCategory('all');
+    setStartDate('');
+    setEndDate('');
+  }, []);
+
+  const hasActiveFilters = searchTerm || selectedCurrency !== 'all' || 
+                           selectedCategory !== 'all' || startDate || endDate;
+
+  const getCategoryIcon = useCallback((category) => {
+    const icons = {
+      'Food & Dining': '🍽️',
+      'Transportation': '🚗',
+      'Bills & Utilities': '💡',
+      'Shopping': '🛍️',
+      'Entertainment': '🎬',
+      'Healthcare': '🏥',
+      'Education': '📚',
+      'Travel': '✈️',
+      'Income': '💰',
+      'Transfer': '🔄',
+      'Credit Card Payment': '💳',
+      'Mobile & Internet': '📱',
+      'Services': '⚙️',
+      'Other Expenses': '📦',
+      'Salary': '💵',
+      'Investment': '📈',
+      'Gifts': '🎁',
+      'Personal Care': '💅'
+    };
+    return icons[category] || '💸';
+  }, []);
+
+  // Convert amount to INR
+  const convertToINR = useCallback((amount, currency) => {
+    if (!currency || currency === 'INR') {
+      return amount;
+    }
+    const rate = exchangeRates[currency] || 1;
+    return amount * rate;
+  }, [exchangeRates]);
+
+  // Get currency symbol
+  const getCurrencySymbol = useCallback((currency) => {
+    const symbols = {
+      'INR': '₹',
+      'THB': '฿',
+      'USD': '$',
+      'EUR': '€',
+      'GBP': '£'
+    };
+    return symbols[currency] || currency;
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="expense-list">
+        <div className="loading-container">
+          <div className="loading-spinner"></div>
+          <p>Loading expenses...</p>
         </div>
       </div>
+    );
+  }
 
-      {/* Filters Section */}
-      <div className="filters-card">
-        <div className="filters-grid">
-          <div className="filter-item" style={{ gridColumn: '1 / -1' }}>
-            <label>🔍 Search</label>
-            <SearchBar
-              onSearch={handleSearch}
-              placeholder="Search by category or description..."
-              debounceDelay={300}
-            />
-          </div>
-
-          <div className="filter-item">
-            <label>💱 Currency</label>
-            <select
-              value={filter.currency}
-              onChange={handleCurrencyChange}
-              className="filter-select"
-            >
-              <option value="ALL">All Currencies</option>
-              <option value="THB">THB (฿)</option>
-              <option value="INR">INR (₹)</option>
-            </select>
-          </div>
-
-          <div className="filter-item">
-            <label>📁 Category</label>
-            <select
-              value={filter.category}
-              onChange={handleCategoryChange}
-              className="filter-select"
-            >
-              <option value="ALL">All Categories</option>
-              {categories.map(cat => (
-                <option key={cat} value={cat}>{cat}</option>
-              ))}
-            </select>
-          </div>
-
-          <div className="filter-item">
-            <label>📅 Date Range</label>
-            <div className="date-range">
-              <input
-                type="date"
-                value={filter.startDate}
-                onChange={handleStartDateChange}
-                className="filter-input"
-              />
-              <span style={{ padding: '0 8px', color: '#94a3b8' }}>to</span>
-              <input
-                type="date"
-                value={filter.endDate}
-                onChange={handleEndDateChange}
-                className="filter-input"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Clear Filters Button */}
-        {hasActiveFilters && (
-          <button
-            onClick={clearFilters}
-            className="clear-filters-btn"
-          >
-            Clear All Filters
-          </button>
-        )}
+  return (
+    <div className="expense-list">
+      {/* Header */}
+      <div className="expense-list-header">
+        <h2>📝 Expense History</h2>
+        <p className="subtitle">View and manage all your transactions</p>
       </div>
 
       {/* Summary Cards */}
       <div className="summary-cards">
         <div className="summary-card">
-          <div className="summary-icon" style={{ background: 'rgba(59, 130, 246, 0.1)' }}>💵</div>
+          <div className="summary-icon">📊</div>
           <div className="summary-content">
-            <p className="summary-label">Total THB</p>
-            <p className="summary-value">฿{totals.thb.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+            <div className="summary-label">Total Expenses</div>
+            <div className="summary-value">{summaryStats.count}</div>
           </div>
         </div>
-
+        
         <div className="summary-card">
-          <div className="summary-icon" style={{ background: 'rgba(16, 185, 129, 0.1)' }}>💰</div>
+          <div className="summary-icon">💰</div>
           <div className="summary-content">
-            <p className="summary-label">Total INR</p>
-            <p className="summary-value">₹{totals.inr.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+            <div className="summary-label">Total Amount</div>
+            <div className="summary-value">
+              {Object.entries(summaryStats.currencyTotals).map(([curr, amount]) => (
+                <div key={curr} className="currency-amount">
+                  {curr} {amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-
+        
         <div className="summary-card">
-          <div className="summary-icon" style={{ background: 'rgba(139, 92, 246, 0.1)' }}>📊</div>
+          <div className="summary-icon">📈</div>
           <div className="summary-content">
-            <p className="summary-label">Total Transactions</p>
-            <p className="summary-value">{filteredExpenses.length}</p>
+            <div className="summary-label">Average Expense</div>
+            <div className="summary-value">
+              ₹{summaryStats.avgExpense.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Expense List with optimized rendering */}
-      {loading ? (
-        <div className="expense-items-grid">
-          {[...Array(6)].map((_, i) => (
-            <CardSkeleton key={i} />
-          ))}
+      {/* Filters */}
+      <div className="expense-filters">
+        <div className="filter-row">
+          <input
+            type="text"
+            placeholder="🔍 Search by description or category..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="search-input"
+          />
+          
+          <select
+            value={selectedCurrency}
+            onChange={(e) => setSelectedCurrency(e.target.value)}
+            className="filter-select"
+          >
+            <option value="all">💱 All Currencies</option>
+            {currencies.map(curr => (
+              <option key={curr} value={curr}>{curr}</option>
+            ))}
+          </select>
+          
+          <select
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="filter-select"
+          >
+            <option value="all">📂 All Categories</option>
+            {categories.map(cat => (
+              <option key={cat} value={cat}>{cat}</option>
+            ))}
+          </select>
         </div>
-      ) : expenses.length === 0 ? (
-        <NoExpenses />
-      ) : filteredExpenses.length === 0 ? (
-        <NoSearchResults />
-      ) : (
-        <div className="expense-items-grid">
-          {filteredExpenses.map((expense) => (
-            <ExpenseCard
-              key={expense.id}
-              expense={expense}
-              onDelete={handleDeleteClick}
+        
+        <div className="filter-row">
+          <div className="date-filter">
+            <label>From:</label>
+            <input
+              type="date"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+              className="date-input"
             />
-          ))}
+          </div>
+          
+          <div className="date-filter">
+            <label>To:</label>
+            <input
+              type="date"
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
+              className="date-input"
+            />
+          </div>
+          
+          {hasActiveFilters && (
+            <button onClick={clearFilters} className="btn-clear-filters">
+              ✖ Clear Filters
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Results Info */}
+      <div className="results-info">
+        <span>
+          Showing {paginatedExpenses.length} of {filteredExpenses.length} expenses
+          {hasActiveFilters && ` (filtered from ${expenses.length} total)`}
+        </span>
+      </div>
+
+      {/* Bulk Actions Bar */}
+      {selectedExpenses.length > 0 && (
+        <div className="bulk-actions-bar">
+          <span className="bulk-selected-count">
+            {selectedExpenses.length} expense{selectedExpenses.length > 1 ? 's' : ''} selected
+          </span>
+          <button
+            className="btn-bulk-delete"
+            onClick={() => {
+              if (window.confirm(`Are you sure you want to delete ${selectedExpenses.length} expense(s)? This action cannot be undone.`)) {
+                handleBulkDelete();
+              }
+            }}
+          >
+            🗑️ Delete Selected
+          </button>
+          <button
+            className="btn-bulk-clear"
+            onClick={() => setSelectedExpenses([])}
+          >
+            ✖ Clear Selection
+          </button>
         </div>
       )}
 
-      {/* Confirmation Modal */}
-      <ConfirmModal
-        isOpen={deleteModal.isOpen}
-        onClose={handleDeleteCancel}
-        onConfirm={handleDeleteConfirm}
-        title="Delete Expense"
-        message={`Are you sure you want to delete this ${deleteModal.expense?.category} expense of ${deleteModal.expense?.currency === 'THB' ? '฿' : '₹'}${Number(deleteModal.expense?.amount || 0).toFixed(2)}?`}
-        confirmText="Delete"
-        cancelText="Cancel"
-        type="danger"
-      />
+      {/* Table */}
+      {filteredExpenses.length === 0 ? (
+        <div className="no-expenses">
+          <div className="no-expenses-icon">📭</div>
+          <h3>{expenses.length === 0 ? 'No expenses recorded yet' : 'No expenses match your filters'}</h3>
+          <p>{expenses.length === 0 ? 'Start adding expenses to track your spending' : 'Try adjusting your search criteria'}</p>
+        </div>
+      ) : (
+        <>
+          <div className="table-container">
+            <table className="expenses-table">
+              <thead>
+                <tr>
+                  <th className="col-checkbox">
+                    <input
+                      type="checkbox"
+                      checked={selectedExpenses.length === paginatedExpenses.length && paginatedExpenses.length > 0}
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setSelectedExpenses(paginatedExpenses.map(exp => exp.id));
+                        } else {
+                          setSelectedExpenses([]);
+                        }
+                      }}
+                      title="Select all on this page"
+                    />
+                  </th>
+                  <th className="col-icon"></th>
+                  <th className="col-date">Date</th>
+                  <th className="col-category">Category</th>
+                  <th className="col-description">Description</th>
+                  <th className="col-method">Payment Method</th>
+                  <th className="col-amount">Amount</th>
+                  <th className="col-actions">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {paginatedExpenses.map((expense) => (
+                  <tr key={expense.id} className={`expense-row ${selectedExpenses.includes(expense.id) ? 'selected' : ''}`}>
+                    <td className="col-checkbox">
+                      <input
+                        type="checkbox"
+                        checked={selectedExpenses.includes(expense.id)}
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            setSelectedExpenses([...selectedExpenses, expense.id]);
+                          } else {
+                            setSelectedExpenses(selectedExpenses.filter(id => id !== expense.id));
+                          }
+                        }}
+                      />
+                    </td>
+                    <td className="col-icon">
+                      <span className="category-icon">
+                        {getCategoryIcon(expense.category)}
+                      </span>
+                    </td>
+                    <td className="col-date">
+                      {new Date(expense.date || expense.timestamp).toLocaleDateString('en-GB', {
+                        day: '2-digit',
+                        month: 'short',
+                        year: 'numeric'
+                      })}
+                    </td>
+                    <td className="col-category">
+                      <span className="category-badge">{expense.category}</span>
+                    </td>
+                    <td className="col-description">
+                      <div className="description-cell">
+                        <span className="description-text">{expense.description}</span>
+                        {expense.imported && (
+                          <span className="imported-badge" title="Imported from bank statement">
+                            📥 Imported
+                          </span>
+                        )}
+                      </div>
+                    </td>
+                    <td className="col-method">
+                      {expense.paymentMethod || 'N/A'}
+                    </td>
+                    <td className="col-amount">
+                      <div className="amount-cell">
+                        <div className="amount-primary">
+                          {getCurrencySymbol(expense.currency || 'INR')} {expense.amount.toLocaleString('en-US', {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                          })}
+                        </div>
+                        {expense.currency && expense.currency !== 'INR' && (
+                          <div className="amount-converted">
+                            ≈ ₹ {convertToINR(expense.amount, expense.currency).toLocaleString('en-US', {
+                              minimumFractionDigits: 2,
+                              maximumFractionDigits: 2
+                            })}
+                          </div>
+                        )}
+                      </div>
+                    </td>
+                    <td className="col-actions">
+                      <button
+                        onClick={() => handleDeleteClick(expense)}
+                        className="btn-delete"
+                        title="Delete expense"
+                      >
+                        🗑️
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="pagination">
+              <button
+                onClick={() => setCurrentPage(1)}
+                disabled={currentPage === 1}
+                className="btn-page"
+              >
+                « First
+              </button>
+              <button
+                onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                disabled={currentPage === 1}
+                className="btn-page"
+              >
+                ‹ Previous
+              </button>
+              
+              <div className="page-numbers">
+                {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                  let pageNum;
+                  if (totalPages <= 5) {
+                    pageNum = i + 1;
+                  } else if (currentPage <= 3) {
+                    pageNum = i + 1;
+                  } else if (currentPage >= totalPages - 2) {
+                    pageNum = totalPages - 4 + i;
+                  } else {
+                    pageNum = currentPage - 2 + i;
+                  }
+                  
+                  return (
+                    <button
+                      key={pageNum}
+                      onClick={() => setCurrentPage(pageNum)}
+                      className={`btn-page ${currentPage === pageNum ? 'active' : ''}`}
+                    >
+                      {pageNum}
+                    </button>
+                  );
+                })}
+              </div>
+              
+              <button
+                onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                disabled={currentPage === totalPages}
+                className="btn-page"
+              >
+                Next ›
+              </button>
+              <button
+                onClick={() => setCurrentPage(totalPages)}
+                disabled={currentPage === totalPages}
+                className="btn-page"
+              >
+                Last »
+              </button>
+              
+              <span className="page-info">
+                Page {currentPage} of {totalPages}
+              </span>
+            </div>
+          )}
+        </>
+      )}
+
+      {/* Delete Confirmation Modal */}
+      {deleteModal.isOpen && (
+        <div className="modal-overlay" onClick={handleDeleteCancel}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <h3>🗑️ Delete Expense</h3>
+            <p>Are you sure you want to delete this expense?</p>
+            <div className="expense-details-modal">
+              <p><strong>Description:</strong> {deleteModal.expense.description}</p>
+              <p><strong>Amount:</strong> {deleteModal.expense.currency || 'INR'} {deleteModal.expense.amount}</p>
+              <p><strong>Category:</strong> {deleteModal.expense.category}</p>
+              <p><strong>Date:</strong> {new Date(deleteModal.expense.date || deleteModal.expense.timestamp).toLocaleDateString()}</p>
+            </div>
+            <div className="modal-actions">
+              <button onClick={handleDeleteCancel} className="btn-cancel">
+                Cancel
+              </button>
+              <button onClick={handleDeleteConfirm} className="btn-confirm-delete">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
